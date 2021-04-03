@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.bt_check_Print = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
@@ -41,8 +41,8 @@
             this.rbMaleStd = new System.Windows.Forms.RadioButton();
             this.rbFemaleStd = new System.Windows.Forms.RadioButton();
             this.rb_AllStd = new System.Windows.Forms.RadioButton();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.bt_Save_Text_file = new System.Windows.Forms.Button();
+            this.bt_printer = new System.Windows.Forms.Button();
             this.dataGridView_Print = new System.Windows.Forms.DataGridView();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.panel1.SuspendLayout();
@@ -52,7 +52,7 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.bt_check_Print);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.rbMaleStd);
             this.panel1.Controls.Add(this.rbFemaleStd);
@@ -62,17 +62,17 @@
             this.panel1.Size = new System.Drawing.Size(1144, 122);
             this.panel1.TabIndex = 0;
             // 
-            // button1
+            // bt_check_Print
             // 
-            this.button1.BackColor = System.Drawing.Color.Red;
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button1.Location = new System.Drawing.Point(1005, 44);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(98, 30);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Check";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.bt_check_Print.BackColor = System.Drawing.Color.Red;
+            this.bt_check_Print.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.bt_check_Print.Location = new System.Drawing.Point(1005, 44);
+            this.bt_check_Print.Name = "bt_check_Print";
+            this.bt_check_Print.Size = new System.Drawing.Size(98, 30);
+            this.bt_check_Print.TabIndex = 4;
+            this.bt_check_Print.Text = "Check";
+            this.bt_check_Print.UseVisualStyleBackColor = false;
+            this.bt_check_Print.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel2
             // 
@@ -205,26 +205,26 @@
             this.rb_AllStd.UseVisualStyleBackColor = true;
             this.rb_AllStd.CheckedChanged += new System.EventHandler(this.rb_AllStd_CheckedChanged);
             // 
-            // button2
+            // bt_Save_Text_file
             // 
-            this.button2.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button2.Location = new System.Drawing.Point(328, 627);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(229, 36);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Save To Text File";
-            this.button2.UseVisualStyleBackColor = false;
+            this.bt_Save_Text_file.BackColor = System.Drawing.Color.DodgerBlue;
+            this.bt_Save_Text_file.Location = new System.Drawing.Point(328, 627);
+            this.bt_Save_Text_file.Name = "bt_Save_Text_file";
+            this.bt_Save_Text_file.Size = new System.Drawing.Size(229, 36);
+            this.bt_Save_Text_file.TabIndex = 2;
+            this.bt_Save_Text_file.Text = "Save To Text File";
+            this.bt_Save_Text_file.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // bt_printer
             // 
-            this.button3.BackColor = System.Drawing.Color.OrangeRed;
-            this.button3.Location = new System.Drawing.Point(614, 627);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(179, 36);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Printer";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.bt_printer.BackColor = System.Drawing.Color.OrangeRed;
+            this.bt_printer.Location = new System.Drawing.Point(614, 627);
+            this.bt_printer.Name = "bt_printer";
+            this.bt_printer.Size = new System.Drawing.Size(179, 36);
+            this.bt_printer.TabIndex = 3;
+            this.bt_printer.Text = "Printer";
+            this.bt_printer.UseVisualStyleBackColor = false;
+            this.bt_printer.Click += new System.EventHandler(this.button3_Click);
             // 
             // dataGridView_Print
             // 
@@ -250,8 +250,8 @@
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(1168, 700);
             this.Controls.Add(this.dataGridView_Print);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.bt_printer);
+            this.Controls.Add(this.bt_Save_Text_file);
             this.Controls.Add(this.panel1);
             this.Name = "Print";
             this.Text = "Print";
@@ -274,14 +274,14 @@
         private System.Windows.Forms.RadioButton rbMaleStd;
         private System.Windows.Forms.RadioButton rbFemaleStd;
         private System.Windows.Forms.RadioButton rb_AllStd;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button bt_check_Print;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dtPicker_min;
         private System.Windows.Forms.RadioButton radioButton5;
         private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button bt_Save_Text_file;
+        private System.Windows.Forms.Button bt_printer;
         private System.Windows.Forms.DataGridView dataGridView_Print;
         private System.Windows.Forms.PrintDialog printDialog1;
     }

@@ -36,7 +36,7 @@ namespace check
         {
             infoStudent ifStu = new infoStudent();
             //this.Hide();
-            ifStu.ShowDialog();
+            ifStu.Show();
             //this.Close();
         }
 
@@ -44,14 +44,14 @@ namespace check
         {
             StudentList lStudent = new StudentList();
             //this.Hide();
-            lStudent.ShowDialog();
+            lStudent.Show();
             //this.Close();
         }
 
         private void sTATICSToolStripMenuItem_Click(object sender, EventArgs e)
         {
             StatisForm fSta = new StatisForm();
-            fSta.ShowDialog();
+            fSta.Show();
         }
 
         private void pRINTToolStripMenuItem_Click(object sender, EventArgs e)
@@ -64,6 +64,12 @@ namespace check
         {
             findStudent updateStd = new findStudent();
             updateStd.Show();
+        }
+
+        private void mANAGESTUDENTFORMToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ManageStudentForm fManage = new ManageStudentForm();
+            fManage.Show();
         }
     }
 }

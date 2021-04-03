@@ -20,9 +20,12 @@ namespace check
             int totalStd = std.getTotalStd();
             int totalMale = std.getTotalMale();
             int totalFMale = std.getTotalFemale();
-            string sTotal = string.Format("Total :{0}", totalStd);
-            string sPercentMale = string.Format("Male :{0} %", (totalMale*1.0/totalStd)*100);
-            string sPercentFemale = string.Format("Female :{0} %", (totalFMale*1.0/totalStd)*100);
+
+            double percentMale = ((totalMale*1.0) / (totalStd*1.0)) * 100;
+
+            string sTotal = string.Format("Total :{0:00}", totalStd);
+            string sPercentMale = string.Format("Male :{0:00} %",percentMale );
+            string sPercentFemale = string.Format("Female :{0:00} %", 100-percentMale);
             label_Total.Text = sTotal;
             label_Female.Text = sPercentFemale;
             label_totalMale.Text = sPercentMale;

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.buttonImage = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pic_box_infoStudent = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.textAddress = new System.Windows.Forms.TextBox();
             this.textPhone = new System.Windows.Forms.TextBox();
@@ -38,7 +38,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.rbFemale = new System.Windows.Forms.RadioButton();
             this.rbMale = new System.Windows.Forms.RadioButton();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker_Student = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.textLname = new System.Windows.Forms.TextBox();
             this.textFname = new System.Windows.Forms.TextBox();
@@ -46,11 +46,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.bt_edit = new System.Windows.Forms.Button();
+            this.bt_Remove = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.bt_update_image = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_box_infoStudent)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonImage
@@ -64,17 +64,17 @@
             this.buttonImage.Text = "upload image";
             this.buttonImage.UseVisualStyleBackColor = true;
             // 
-            // pictureBox1
+            // pic_box_infoStudent
             // 
-            this.pictureBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.pictureBox1.BackColor = System.Drawing.Color.Orchid;
-            this.pictureBox1.Location = new System.Drawing.Point(592, 133);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(223, 134);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 34;
-            this.pictureBox1.TabStop = false;
+            this.pic_box_infoStudent.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.pic_box_infoStudent.BackColor = System.Drawing.Color.Orchid;
+            this.pic_box_infoStudent.Location = new System.Drawing.Point(592, 133);
+            this.pic_box_infoStudent.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.pic_box_infoStudent.Name = "pic_box_infoStudent";
+            this.pic_box_infoStudent.Size = new System.Drawing.Size(223, 134);
+            this.pic_box_infoStudent.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_box_infoStudent.TabIndex = 34;
+            this.pic_box_infoStudent.TabStop = false;
             // 
             // label8
             // 
@@ -141,13 +141,13 @@
             this.rbFemale.Name = "rbFemale";
             this.rbFemale.Size = new System.Drawing.Size(75, 21);
             this.rbFemale.TabIndex = 27;
-            this.rbFemale.TabStop = true;
             this.rbFemale.Text = "Female";
             this.rbFemale.UseVisualStyleBackColor = true;
             // 
             // rbMale
             // 
             this.rbMale.AutoSize = true;
+            this.rbMale.Checked = true;
             this.rbMale.Location = new System.Drawing.Point(189, 226);
             this.rbMale.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.rbMale.Name = "rbMale";
@@ -158,18 +158,18 @@
             this.rbMale.UseVisualStyleBackColor = true;
             this.rbMale.CheckedChanged += new System.EventHandler(this.rbMale_CheckedChanged);
             // 
-            // dateTimePicker1
+            // dateTimePicker_Student
             // 
-            this.dateTimePicker1.CalendarMonthBackground = System.Drawing.Color.Yellow;
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(189, 183);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dateTimePicker1.Size = new System.Drawing.Size(274, 22);
-            this.dateTimePicker1.TabIndex = 25;
-            this.dateTimePicker1.Value = new System.DateTime(2021, 3, 18, 10, 7, 40, 0);
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            this.dateTimePicker_Student.CalendarMonthBackground = System.Drawing.Color.Yellow;
+            this.dateTimePicker_Student.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker_Student.Location = new System.Drawing.Point(189, 183);
+            this.dateTimePicker_Student.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.dateTimePicker_Student.Name = "dateTimePicker_Student";
+            this.dateTimePicker_Student.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dateTimePicker_Student.Size = new System.Drawing.Size(274, 22);
+            this.dateTimePicker_Student.TabIndex = 25;
+            this.dateTimePicker_Student.Value = new System.DateTime(2021, 3, 18, 10, 7, 40, 0);
+            this.dateTimePicker_Student.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // label4
             // 
@@ -237,30 +237,30 @@
             this.label1.TabIndex = 18;
             this.label1.Text = "Student ID";
             // 
-            // button3
+            // bt_edit
             // 
-            this.button3.BackColor = System.Drawing.Color.RoyalBlue;
-            this.button3.Location = new System.Drawing.Point(504, 372);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(154, 38);
-            this.button3.TabIndex = 37;
-            this.button3.Text = "Edit";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.bt_edit.BackColor = System.Drawing.Color.RoyalBlue;
+            this.bt_edit.Location = new System.Drawing.Point(504, 372);
+            this.bt_edit.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.bt_edit.Name = "bt_edit";
+            this.bt_edit.Size = new System.Drawing.Size(154, 38);
+            this.bt_edit.TabIndex = 37;
+            this.bt_edit.Text = "Edit";
+            this.bt_edit.UseVisualStyleBackColor = false;
+            this.bt_edit.Click += new System.EventHandler(this.bt_edit_Click);
             // 
-            // button2
+            // bt_Remove
             // 
-            this.button2.BackColor = System.Drawing.Color.Brown;
-            this.button2.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.button2.Location = new System.Drawing.Point(283, 372);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(139, 38);
-            this.button2.TabIndex = 36;
-            this.button2.Text = "Remove";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.bt_Remove.BackColor = System.Drawing.Color.Brown;
+            this.bt_Remove.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.bt_Remove.Location = new System.Drawing.Point(283, 372);
+            this.bt_Remove.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.bt_Remove.Name = "bt_Remove";
+            this.bt_Remove.Size = new System.Drawing.Size(139, 38);
+            this.bt_Remove.TabIndex = 36;
+            this.bt_Remove.Text = "Remove";
+            this.bt_Remove.UseVisualStyleBackColor = false;
+            this.bt_Remove.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -292,10 +292,10 @@
             this.ClientSize = new System.Drawing.Size(850, 490);
             this.Controls.Add(this.bt_update_image);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.bt_edit);
+            this.Controls.Add(this.bt_Remove);
             this.Controls.Add(this.buttonImage);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pic_box_infoStudent);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.textAddress);
             this.Controls.Add(this.textPhone);
@@ -304,7 +304,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.rbFemale);
             this.Controls.Add(this.rbMale);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dateTimePicker_Student);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textLname);
             this.Controls.Add(this.textFname);
@@ -314,7 +314,7 @@
             this.Controls.Add(this.label1);
             this.Name = "findStudent";
             this.Text = "findStudent";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_box_infoStudent)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -323,7 +323,7 @@
         #endregion
 
         private System.Windows.Forms.Button buttonImage;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pic_box_infoStudent;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textAddress;
         private System.Windows.Forms.TextBox textPhone;
@@ -332,7 +332,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.RadioButton rbFemale;
         private System.Windows.Forms.RadioButton rbMale;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker_Student;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textLname;
         private System.Windows.Forms.TextBox textFname;
@@ -340,8 +340,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button bt_edit;
+        private System.Windows.Forms.Button bt_Remove;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button bt_update_image;
     }

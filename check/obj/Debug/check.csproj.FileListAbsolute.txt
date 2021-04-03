@@ -9,10 +9,10 @@ D:\WinformProject\check\check\obj\Debug\check.exe
 D:\WinformProject\check\check\obj\Debug\check.pdb
 D:\WinformProject\check\check\obj\Debug\check.Form1.resources
 D:\WinformProject\check\check\obj\Debug\check.MainForm.resources
-D:\WinformProject\check\check\obj\Debug\check.addStudent.resources
 D:\WinformProject\check\check\obj\Debug\check.Register.resources
 D:\WinformProject\check\check\obj\Debug\check.infoStudent.resources
 D:\WinformProject\check\check\obj\Debug\check.StudentList.resources
 D:\WinformProject\check\check\obj\Debug\check.findStudent.resources
 D:\WinformProject\check\check\obj\Debug\check.StatisForm.resources
 D:\WinformProject\check\check\obj\Debug\check.Print.resources
+D:\WinformProject\check\check\obj\Debug\check.ManageStudentForm.resources

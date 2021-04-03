@@ -60,7 +60,7 @@ namespace check
 
         private void button1_Click(object sender, EventArgs e)
         {
-                
+               
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -75,7 +75,7 @@ namespace check
             }
             else
             {
-                fStd.gmale.Checked = true;
+                fStd.gender.Checked = false;
             }
             fStd.phone.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
             fStd.address.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();

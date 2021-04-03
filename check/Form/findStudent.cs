@@ -14,6 +14,7 @@ namespace check
 {
     public partial class findStudent : Form
     {
+        Student student = new Student();
         public findStudent()
         {
             InitializeComponent();
@@ -40,8 +41,8 @@ namespace check
         }
         public DateTime dtime
         {
-            get { return this.dateTimePicker1.Value; }
-            set { this.dateTimePicker1.Value = value; }
+            get { return this.dateTimePicker_Student.Value; }
+            set { this.dateTimePicker_Student.Value = value; }
         }
         public RadioButton gender { 
             get { return this.rbFemale; }
@@ -59,8 +60,8 @@ namespace check
         }
         public PictureBox StdImage
         {
-            get { return this.pictureBox1; }
-            set { this.pictureBox1 = value; }
+            get { return this.pic_box_infoStudent; }
+            set { this.pic_box_infoStudent = value; }
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -76,7 +77,7 @@ namespace check
                     textFname.Text = dt.Rows[0]["fname"].ToString();
                     textLname.Text = dt.Rows[0]["lname"].ToString();
 
-                    dateTimePicker1.Value = (DateTime)dt.Rows[0]["bdate"];
+                    dateTimePicker_Student.Value = (DateTime)dt.Rows[0]["bdate"];
 
                     if (dt.Rows[0]["gender"].ToString() == "Female")
                     {
@@ -91,7 +92,7 @@ namespace check
 
                     byte[] pic = (byte[])dt.Rows[0]["picture"];
                     MemoryStream picture = new MemoryStream(pic);
-                    pictureBox1.Image = Image.FromStream(picture);
+                    pic_box_infoStudent.Image = Image.FromStream(picture);
                 }
             }
             catch
@@ -106,17 +107,46 @@ namespace check
 
         }
 
+        public bool vetifyData()
+        {
+            if (textId.Text.Trim() == ""
+                || textFname.Text.Trim() == ""
+                || textLname.Text.Trim() == ""
+                || textPhone.Text.Trim() == ""
+                || textAddress.Text.Trim() == ""
+                || pic_box_infoStudent.Image == null
+                )
+            {
+                return false;
+            }
+            else { return true; }
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
             Student std = new Student();
-            bool del =std.deleteStudent(int.Parse(textId.Text));
-            if(del==true)
+            
+            try
             {
-                MessageBox.Show("delete done...");
-            }
-            else
+                bool del = std.deleteStudent(int.Parse(textId.Text));
+                if (del)
+                {
+                    text_Id.Text = "";
+                    textFname.Text = "";
+                    textLname.Text = "";
+                    textPhone.Text = "";
+                    textAddress.Text = "";
+                    dateTimePicker_Student.Value = DateTime.Now;
+                    pic_box_infoStudent.Image = null;
+                    MessageBox.Show("Student Deleted", "Delete Student", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Error To Delete Student ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }catch(Exception ex)
             {
-                MessageBox.Show("error to delete...");
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -141,7 +171,51 @@ namespace check
             opf.Filter = "SELECT Image (*.jpg;*.png;*.gif)|*.jpg;*.png;*.gif";
             if(opf.ShowDialog() == DialogResult.OK)
             {
-                pictureBox1.Image = Image.FromFile(opf.FileName);
+                pic_box_infoStudent.Image = Image.FromFile(opf.FileName);
+            }
+        }
+
+        private void bt_edit_Click(object sender, EventArgs e)
+        {
+            int id;
+            string fName =textFname.Text;
+            string lName =textLname.Text;
+            string address = textAddress.Text;
+            string phone = textPhone.Text;
+            string gender = "Male";
+            DateTime dtStudent = dateTimePicker_Student.Value;
+
+            if(rbFemale.Checked == true)
+            {
+                gender = rbFemale.Text;
+            }
+
+            MemoryStream pic = new MemoryStream();
+            int bornYear = dtStudent.Year;
+            int thisYear = DateTime.Now.Year;
+            if(thisYear -bornYear <10 || thisYear - bornYear > 100)
+            {
+                MessageBox.Show("Student Age Must Between 10 to 100", "Warning info of Student", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                try
+                {
+                    id = Convert.ToInt32(text_Id.Text);
+                    pic_box_infoStudent.Image.Save(pic, pic_box_infoStudent.Image.RawFormat);
+                    if (student.updateStudent(id, fName, lName, dtStudent, gender, phone, address, pic))
+                    {
+                        MessageBox.Show("Update Student Success", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error To Update Info Of Student", "Error to Update Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                catch (Exception)
+                {
+
+                }
             }
         }
     }

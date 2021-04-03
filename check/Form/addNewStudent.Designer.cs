@@ -45,9 +45,9 @@
             this.textAddress = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.buttonImage = new System.Windows.Forms.Button();
+            this.bt_upload_image = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.bt_Add_student = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -131,6 +131,7 @@
             // rbMale
             // 
             this.rbMale.AutoSize = true;
+            this.rbMale.Checked = true;
             this.rbMale.Location = new System.Drawing.Point(212, 186);
             this.rbMale.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.rbMale.Name = "rbMale";
@@ -221,17 +222,17 @@
             this.pictureBox1.TabIndex = 16;
             this.pictureBox1.TabStop = false;
             // 
-            // buttonImage
+            // bt_upload_image
             // 
-            this.buttonImage.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.buttonImage.Location = new System.Drawing.Point(211, 595);
-            this.buttonImage.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.buttonImage.Name = "buttonImage";
-            this.buttonImage.Size = new System.Drawing.Size(275, 32);
-            this.buttonImage.TabIndex = 17;
-            this.buttonImage.Text = "upload image";
-            this.buttonImage.UseVisualStyleBackColor = true;
-            this.buttonImage.Click += new System.EventHandler(this.button1_Click);
+            this.bt_upload_image.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.bt_upload_image.Location = new System.Drawing.Point(211, 595);
+            this.bt_upload_image.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.bt_upload_image.Name = "bt_upload_image";
+            this.bt_upload_image.Size = new System.Drawing.Size(275, 32);
+            this.bt_upload_image.TabIndex = 17;
+            this.bt_upload_image.Text = "upload image";
+            this.bt_upload_image.UseVisualStyleBackColor = true;
+            this.bt_upload_image.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -245,17 +246,17 @@
             this.button2.Text = "Cancer";
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // bt_Add_student
             // 
-            this.button3.BackColor = System.Drawing.Color.RoyalBlue;
-            this.button3.Location = new System.Drawing.Point(317, 656);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(154, 38);
-            this.button3.TabIndex = 19;
-            this.button3.Text = "Add";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.bt_Add_student.BackColor = System.Drawing.Color.RoyalBlue;
+            this.bt_Add_student.Location = new System.Drawing.Point(317, 656);
+            this.bt_Add_student.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.bt_Add_student.Name = "bt_Add_student";
+            this.bt_Add_student.Size = new System.Drawing.Size(154, 38);
+            this.bt_Add_student.TabIndex = 19;
+            this.bt_Add_student.Text = "Add";
+            this.bt_Add_student.UseVisualStyleBackColor = false;
+            this.bt_Add_student.Click += new System.EventHandler(this.bt_Add_student_Click);
             // 
             // infoStudent
             // 
@@ -263,9 +264,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.OrangeRed;
             this.ClientSize = new System.Drawing.Size(557, 760);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.bt_Add_student);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.buttonImage);
+            this.Controls.Add(this.bt_upload_image);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.textAddress);
@@ -313,8 +314,8 @@
         private System.Windows.Forms.TextBox textAddress;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button buttonImage;
+        private System.Windows.Forms.Button bt_upload_image;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button bt_Add_student;
     }
 }

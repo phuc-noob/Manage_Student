@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.label_Total = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.label_totalMale = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.label_Female = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -49,6 +49,17 @@
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // label_Total
+            // 
+            this.label_Total.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Total.Location = new System.Drawing.Point(6, 31);
+            this.label_Total.Name = "label_Total";
+            this.label_Total.Size = new System.Drawing.Size(651, 51);
+            this.label_Total.TabIndex = 0;
+            this.label_Total.Text = "label1";
+            this.label_Total.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_Total.Click += new System.EventHandler(this.label1_Click);
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.IndianRed;
@@ -57,6 +68,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(327, 121);
             this.panel2.TabIndex = 1;
+            // 
+            // label_totalMale
+            // 
+            this.label_totalMale.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_totalMale.Location = new System.Drawing.Point(6, 26);
+            this.label_totalMale.Name = "label_totalMale";
+            this.label_totalMale.Size = new System.Drawing.Size(314, 51);
+            this.label_totalMale.TabIndex = 1;
+            this.label_totalMale.Text = "label2";
+            this.label_totalMale.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel3
             // 
@@ -67,30 +88,9 @@
             this.panel3.Size = new System.Drawing.Size(337, 121);
             this.panel3.TabIndex = 2;
             // 
-            // label_Total
-            // 
-            this.label_Total.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Total.Location = new System.Drawing.Point(215, 38);
-            this.label_Total.Name = "label_Total";
-            this.label_Total.Size = new System.Drawing.Size(250, 51);
-            this.label_Total.TabIndex = 0;
-            this.label_Total.Text = "label1";
-            this.label_Total.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label_Total.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // label_totalMale
-            // 
-            this.label_totalMale.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_totalMale.Location = new System.Drawing.Point(6, 26);
-            this.label_totalMale.Name = "label_totalMale";
-            this.label_totalMale.Size = new System.Drawing.Size(314, 51);
-            this.label_totalMale.TabIndex = 1;
-            this.label_totalMale.Text = "label2";
-            this.label_totalMale.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // label_Female
             // 
-            this.label_Female.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Female.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_Female.Location = new System.Drawing.Point(3, 25);
             this.label_Female.Name = "label_Female";
             this.label_Female.Size = new System.Drawing.Size(353, 52);

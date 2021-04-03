@@ -35,8 +35,14 @@ namespace check
 
         private void button3_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void bt_Add_student_Click(object sender, EventArgs e)
+        {
             Student std = new Student();
-            try { 
+            try
+            {
                 int id = int.Parse(textId.Text);
                 string fName = textFname.Text;
                 string lName = textLname.Text;
@@ -49,21 +55,31 @@ namespace check
                 string phone = textPhone.Text;
                 string address = textAddress.Text;
 
+                int thisYear = DateTime.Now.Year;
+                int bornYear = dBirth.Year;
                 MemoryStream pic = new MemoryStream();
-                pictureBox1.Image.Save(pic, pictureBox1.Image.RawFormat);
-
-                if (std.insertStudent(id, fName, lName, dBirth, gender, phone, address, pic) == true)
+                if (thisYear-bornYear <10 || thisYear -bornYear > 100)
                 {
-                    MessageBox.Show("Add new student success...");
+                    MessageBox.Show("Student Age musst between 10 to 100", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
-                    MessageBox.Show("error....");
-                };
+                    pictureBox1.Image.Save(pic, pictureBox1.Image.RawFormat);
+
+                    if (std.insertStudent(id, fName, lName, dBirth, gender, phone, address, pic) == true)
+                    {
+                        MessageBox.Show("Add new student success", "Add Student", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error To Add Student", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    };
+                }
+                
             }
-            catch
+            catch(Exception ex)
             {
-                MessageBox.Show("error...");
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

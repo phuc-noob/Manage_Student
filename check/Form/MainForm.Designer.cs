@@ -35,7 +35,7 @@
             this.lISTSTUDENTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sTATICSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eDITREMOVEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mANAGESTUDENTFORMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolTrip_manageStudent = new System.Windows.Forms.ToolStripMenuItem();
             this.pRINTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.sCOREToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,7 +62,7 @@
             this.lISTSTUDENTToolStripMenuItem,
             this.sTATICSToolStripMenuItem,
             this.eDITREMOVEToolStripMenuItem,
-            this.mANAGESTUDENTFORMToolStripMenuItem,
+            this.toolTrip_manageStudent,
             this.pRINTToolStripMenuItem});
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
             this.toolStripMenuItem2.Size = new System.Drawing.Size(87, 24);
@@ -96,11 +96,12 @@
             this.eDITREMOVEToolStripMenuItem.Text = "EDIT/ REMOVE";
             this.eDITREMOVEToolStripMenuItem.Click += new System.EventHandler(this.eDITREMOVEToolStripMenuItem_Click);
             // 
-            // mANAGESTUDENTFORMToolStripMenuItem
+            // toolTrip_manageStudent
             // 
-            this.mANAGESTUDENTFORMToolStripMenuItem.Name = "mANAGESTUDENTFORMToolStripMenuItem";
-            this.mANAGESTUDENTFORMToolStripMenuItem.Size = new System.Drawing.Size(266, 26);
-            this.mANAGESTUDENTFORMToolStripMenuItem.Text = "MANAGE STUDENT FORM";
+            this.toolTrip_manageStudent.Name = "toolTrip_manageStudent";
+            this.toolTrip_manageStudent.Size = new System.Drawing.Size(266, 26);
+            this.toolTrip_manageStudent.Text = "MANAGE STUDENT FORM";
+            this.toolTrip_manageStudent.Click += new System.EventHandler(this.mANAGESTUDENTFORMToolStripMenuItem_Click);
             // 
             // pRINTToolStripMenuItem
             // 
@@ -149,7 +150,7 @@
         private System.Windows.Forms.ToolStripMenuItem lISTSTUDENTToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sTATICSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eDITREMOVEToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem mANAGESTUDENTFORMToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolTrip_manageStudent;
         private System.Windows.Forms.ToolStripMenuItem pRINTToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sCOREToolStripMenuItem;
     }
