@@ -28,14 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Print));
             this.panel1 = new System.Windows.Forms.Panel();
             this.bt_check_Print = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dt_picker_Max = new System.Windows.Forms.DateTimePicker();
             this.dtPicker_min = new System.Windows.Forms.DateTimePicker();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.rb_No = new System.Windows.Forms.RadioButton();
+            this.rb_Yes = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.rbMaleStd = new System.Windows.Forms.RadioButton();
@@ -61,6 +62,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1144, 122);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // bt_check_Print
             // 
@@ -72,15 +74,15 @@
             this.bt_check_Print.TabIndex = 4;
             this.bt_check_Print.Text = "Check";
             this.bt_check_Print.UseVisualStyleBackColor = false;
-            this.bt_check_Print.Click += new System.EventHandler(this.button1_Click);
+            this.bt_check_Print.Click += new System.EventHandler(this.bt_check_Print_Click);
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.dateTimePicker2);
+            this.panel2.Controls.Add(this.dt_picker_Max);
             this.panel2.Controls.Add(this.dtPicker_min);
-            this.panel2.Controls.Add(this.radioButton5);
-            this.panel2.Controls.Add(this.radioButton4);
+            this.panel2.Controls.Add(this.rb_No);
+            this.panel2.Controls.Add(this.rb_Yes);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -100,13 +102,13 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "AND";
             // 
-            // dateTimePicker2
+            // dt_picker_Max
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(396, 49);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(111, 27);
-            this.dateTimePicker2.TabIndex = 6;
+            this.dt_picker_Max.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dt_picker_Max.Location = new System.Drawing.Point(396, 49);
+            this.dt_picker_Max.Name = "dt_picker_Max";
+            this.dt_picker_Max.Size = new System.Drawing.Size(111, 27);
+            this.dt_picker_Max.TabIndex = 6;
             // 
             // dtPicker_min
             // 
@@ -116,33 +118,33 @@
             this.dtPicker_min.Size = new System.Drawing.Size(111, 27);
             this.dtPicker_min.TabIndex = 5;
             // 
-            // radioButton5
+            // rb_No
             // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Checked = true;
-            this.radioButton5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.radioButton5.Location = new System.Drawing.Point(329, 8);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(51, 24);
-            this.radioButton5.TabIndex = 4;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "No";
-            this.radioButton5.UseVisualStyleBackColor = true;
-            this.radioButton5.CheckedChanged += new System.EventHandler(this.radioButton5_CheckedChanged);
+            this.rb_No.AutoSize = true;
+            this.rb_No.Checked = true;
+            this.rb_No.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rb_No.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.rb_No.Location = new System.Drawing.Point(329, 8);
+            this.rb_No.Name = "rb_No";
+            this.rb_No.Size = new System.Drawing.Size(51, 24);
+            this.rb_No.TabIndex = 4;
+            this.rb_No.TabStop = true;
+            this.rb_No.Text = "No";
+            this.rb_No.UseVisualStyleBackColor = true;
+            this.rb_No.CheckedChanged += new System.EventHandler(this.rb_No_dateRang_CheckedChanged);
             // 
-            // radioButton4
+            // rb_Yes
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.radioButton4.Location = new System.Drawing.Point(234, 8);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(58, 24);
-            this.radioButton4.TabIndex = 3;
-            this.radioButton4.Text = "Yes";
-            this.radioButton4.UseVisualStyleBackColor = true;
-            this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
+            this.rb_Yes.AutoSize = true;
+            this.rb_Yes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rb_Yes.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.rb_Yes.Location = new System.Drawing.Point(234, 8);
+            this.rb_Yes.Name = "rb_Yes";
+            this.rb_Yes.Size = new System.Drawing.Size(58, 24);
+            this.rb_Yes.TabIndex = 3;
+            this.rb_Yes.Text = "Yes";
+            this.rb_Yes.UseVisualStyleBackColor = true;
+            this.rb_Yes.CheckedChanged += new System.EventHandler(this.rb_No_dateRang_CheckedChanged);
             // 
             // label2
             // 
@@ -253,6 +255,7 @@
             this.Controls.Add(this.bt_printer);
             this.Controls.Add(this.bt_Save_Text_file);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Print";
             this.Text = "Print";
             this.Load += new System.EventHandler(this.Print_Load);
@@ -276,10 +279,10 @@
         private System.Windows.Forms.RadioButton rb_AllStd;
         private System.Windows.Forms.Button bt_check_Print;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dt_picker_Max;
         private System.Windows.Forms.DateTimePicker dtPicker_min;
-        private System.Windows.Forms.RadioButton radioButton5;
-        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.RadioButton rb_No;
+        private System.Windows.Forms.RadioButton rb_Yes;
         private System.Windows.Forms.Button bt_Save_Text_file;
         private System.Windows.Forms.Button bt_printer;
         private System.Windows.Forms.DataGridView dataGridView_Print;

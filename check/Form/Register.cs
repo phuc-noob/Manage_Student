@@ -20,35 +20,39 @@ namespace check
 
         private void button2_Click(object sender, EventArgs e)
         {
-            try {
-                string conStr;
-                SqlConnection con;
-                conStr = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Student;Integrated Security=True";
-                con = new SqlConnection(conStr);
-                con.Open();
-
-                //string save ="INSERT into Student (username,password)" +"VALUES ('"+textBox1.Text+"','"+textBox2.Text+"')";
-                SqlCommand cmd = new SqlCommand("INSERT INTO Login (username,password) VALUES (@username,@password)", con);
-                cmd.Parameters.Add("@username", texUsername.Text);
-                cmd.Parameters.Add("@password", textPassword.Text);
-                if (cmd.ExecuteNonQuery() == 1)
-                {
-                    MainForm fmain = new MainForm();
-                    this.Hide();
-                    fmain.ShowDialog();
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("error...");
-                }
-                con.Close();
-            }
-            catch
+            if(textPassword.Text == textConfirm.Text)
             {
-                MessageBox.Show("error....");
+                try
+                {
+                    string conStr;
+                    SqlConnection con;
+                    conStr = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Student;Integrated Security=True";
+                    con = new SqlConnection(conStr);
+                    con.Open();
+
+                    //string save ="INSERT into Student (username,password)" +"VALUES ('"+textBox1.Text+"','"+textBox2.Text+"')";
+                    SqlCommand cmd = new SqlCommand("INSERT INTO Login (username,password) VALUES (@username,@password)", con);
+                    cmd.Parameters.Add("@username", texUsername.Text);
+                    cmd.Parameters.Add("@password", textPassword.Text);
+                    if (cmd.ExecuteNonQuery() == 1)
+                    {
+                        MainForm fmain = new MainForm();
+                        this.Hide();
+                        fmain.ShowDialog();
+                        this.Close();
+                    }
+
+                    con.Close();
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "ERROR PASSWORD", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            
+            else
+            {
+                MessageBox.Show("Confirm Password incorrect ", "ERROR PASSWORD", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void Register_Load(object sender, EventArgs e)
@@ -68,10 +72,15 @@ namespace check
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form1 form = new Form1();
+            fLogin form = new fLogin();
             this.Hide();
             form.ShowDialog();
             this.Close();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

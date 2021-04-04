@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(infoStudent));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,7 +47,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.bt_upload_image = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.bt_cancer = new System.Windows.Forms.Button();
             this.bt_Add_student = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -234,17 +235,18 @@
             this.bt_upload_image.UseVisualStyleBackColor = true;
             this.bt_upload_image.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // bt_cancer
             // 
-            this.button2.BackColor = System.Drawing.Color.Brown;
-            this.button2.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.button2.Location = new System.Drawing.Point(96, 656);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(139, 38);
-            this.button2.TabIndex = 18;
-            this.button2.Text = "Cancer";
-            this.button2.UseVisualStyleBackColor = false;
+            this.bt_cancer.BackColor = System.Drawing.Color.Brown;
+            this.bt_cancer.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.bt_cancer.Location = new System.Drawing.Point(96, 656);
+            this.bt_cancer.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.bt_cancer.Name = "bt_cancer";
+            this.bt_cancer.Size = new System.Drawing.Size(139, 38);
+            this.bt_cancer.TabIndex = 18;
+            this.bt_cancer.Text = "Cancer";
+            this.bt_cancer.UseVisualStyleBackColor = false;
+            this.bt_cancer.Click += new System.EventHandler(this.bt_cancer_Click);
             // 
             // bt_Add_student
             // 
@@ -265,7 +267,7 @@
             this.BackColor = System.Drawing.Color.OrangeRed;
             this.ClientSize = new System.Drawing.Size(557, 760);
             this.Controls.Add(this.bt_Add_student);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.bt_cancer);
             this.Controls.Add(this.bt_upload_image);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label8);
@@ -286,6 +288,7 @@
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "infoStudent";
             this.Text = "infoStudent";
@@ -315,7 +318,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button bt_upload_image;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button bt_cancer;
         private System.Windows.Forms.Button bt_Add_student;
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(findStudent));
             this.buttonImage = new System.Windows.Forms.Button();
             this.pic_box_infoStudent = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -48,7 +49,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.bt_edit = new System.Windows.Forms.Button();
             this.bt_Remove = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.bt_find_student = new System.Windows.Forms.Button();
             this.bt_update_image = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pic_box_infoStudent)).BeginInit();
             this.SuspendLayout();
@@ -262,17 +263,17 @@
             this.bt_Remove.UseVisualStyleBackColor = false;
             this.bt_Remove.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button1
+            // bt_find_student
             // 
-            this.button1.BackColor = System.Drawing.Color.RoyalBlue;
-            this.button1.Location = new System.Drawing.Point(334, 57);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(129, 31);
-            this.button1.TabIndex = 38;
-            this.button1.Text = "Find";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.bt_find_student.BackColor = System.Drawing.Color.RoyalBlue;
+            this.bt_find_student.Location = new System.Drawing.Point(334, 57);
+            this.bt_find_student.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.bt_find_student.Name = "bt_find_student";
+            this.bt_find_student.Size = new System.Drawing.Size(129, 31);
+            this.bt_find_student.TabIndex = 38;
+            this.bt_find_student.Text = "Find";
+            this.bt_find_student.UseVisualStyleBackColor = false;
+            this.bt_find_student.Click += new System.EventHandler(this.bt_find_student_Click);
             // 
             // bt_update_image
             // 
@@ -291,7 +292,7 @@
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(850, 490);
             this.Controls.Add(this.bt_update_image);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.bt_find_student);
             this.Controls.Add(this.bt_edit);
             this.Controls.Add(this.bt_Remove);
             this.Controls.Add(this.buttonImage);
@@ -312,6 +313,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "findStudent";
             this.Text = "findStudent";
             ((System.ComponentModel.ISupportInitialize)(this.pic_box_infoStudent)).EndInit();
@@ -342,7 +344,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button bt_edit;
         private System.Windows.Forms.Button bt_Remove;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button bt_find_student;
         private System.Windows.Forms.Button bt_update_image;
     }
 }

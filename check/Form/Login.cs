@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace check
 {
-    public partial class Form1 : Form
+    public partial class fLogin : Form
     {
-        public Form1()
+        public fLogin()
         {
             InitializeComponent();
         }
@@ -35,24 +35,30 @@ namespace check
 
             DataTable table = new DataTable();
 
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Login WHERE username =@user AND password =@ps",db.getConnection);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Login WHERE username =@user AND password =@ps", db.getConnection);
             cmd.Parameters.Add("@user", SqlDbType.VarChar).Value = textBoxUsername.Text;
             cmd.Parameters.Add("@ps", SqlDbType.VarChar).Value = textPassword.Text;
 
             adapter.SelectCommand = cmd;
             adapter.Fill(table);
-
-            if(table.Rows.Count > 0)
+            try
             {
-                MainForm fMain = new MainForm();
-                this.Hide();
-                fMain.ShowDialog();
-                this.Close();
-            }
-            else
+                if (table.Rows.Count > 0)
+                {
+                    MainForm fMain = new MainForm();
+                    this.Hide();
+                    fMain.ShowDialog();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Error To Login ", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }catch(Exception ex)
             {
-                MessageBox.Show("login again","Login fail",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Error To Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)

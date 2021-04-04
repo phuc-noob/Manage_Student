@@ -18,7 +18,7 @@ namespace check
         {
             InitializeComponent();
         }
-
+        MY_DB db = new MY_DB();
         private void dataGridView_Print_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             
@@ -31,7 +31,7 @@ namespace check
 
         private void Print_Load(object sender, EventArgs e)
         {
-            MY_DB db = new MY_DB();
+            
             SqlCommand cmd = new SqlCommand("SELECT * FROM Std", db.getConnection);
             db.OpenConnection();
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
@@ -44,30 +44,69 @@ namespace check
             // image size
 
             DataGridViewImageColumn picCol = new DataGridViewImageColumn();
+
             //dataGridView_Print.RowTemplate.MinimumHeight = 500;
             dataGridView_Print.DataSource = dt;
             picCol = (DataGridViewImageColumn)dataGridView_Print.Columns[7];
             picCol.ImageLayout = DataGridViewImageCellLayout.Stretch;
             dataGridView_Print.AllowUserToAddRows = false;
-            
+            dataGridView_Print.Columns[3].DefaultCellStyle.Format = "MM/dd/yyyy";
         }
 
-        
-        private void button1_Click(object sender, EventArgs e)
+        private void bt_check_Print_Click(object sender, EventArgs e)
         {
             Student std = new Student();
             SqlCommand cmd;
+            string strGender;
+            string strTime;
+
             if (rbFemaleStd.Checked == true)
             {
-                cmd = new SqlCommand("SELECT * FROM Std WHERE gender ='Female'");
-            }else if(rbMaleStd.Checked == true)
+                strGender = "Female";
+                //cmd = new SqlCommand("SELECT * FROM Std WHERE gender ='Female'");
+            }
+            else if (rbMaleStd.Checked == true)
             {
-                cmd = new SqlCommand("SELECT * FROM Std WHERE gender ='Male'");
+                strGender = "Male";
+                //cmd = new SqlCommand("SELECT * FROM Std WHERE gender ='Male'");
             }
             else
             {
-                cmd = new SqlCommand("SELECT * FROM Std");
+                strGender = "";
+                //cmd = new SqlCommand("SELECT * FROM Std");
             }
+
+            
+
+            if (rb_Yes.Checked == true)
+            {
+                DateTime dMin = dtPicker_min.Value;
+                DateTime dMax = dt_picker_Max.Value;
+
+                if (strGender =="Male" ||strGender == "Female")
+                {
+                    cmd = new SqlCommand("SELECT * FROM Std WHERE gender = '"+ strGender + "' AND bdate >= '" + dMin + "' AND bdate <= '" + dMax + "'", db.getConnection);
+                }
+                else
+                {
+                    cmd = new SqlCommand("SELECT * FROM Std WHERE bdate >= '" + dMin + "' AND bdate <= '" + dMax + "'", db.getConnection);
+                }
+                
+            }
+            else
+            {
+                if (strGender.Contains("Male") || strGender.Contains("Female"))
+                {
+                    cmd = new SqlCommand("SELECT * FROM Std WHERE gender = '" + strGender + "'");
+                }
+                else
+                {
+                    cmd = new SqlCommand("SELECT * FROM Std");
+                }
+                   
+               
+            }
+
             dataGridView_Print.ReadOnly = false;
             DataGridViewImageColumn picCol = new DataGridViewImageColumn();
             dataGridView_Print.RowTemplate.Height = 80;
@@ -75,58 +114,13 @@ namespace check
             picCol = (DataGridViewImageColumn)dataGridView_Print.Columns[7];
             picCol.ImageLayout = DataGridViewImageCellLayout.Stretch;
             dataGridView_Print.AllowUserToAddRows = false;
-
-            if (radioButton4.Checked == true)
-            {
-                DateTime dMin = dtPicker_min.Value;
-                DateTime dMax = dateTimePicker2.Value;
-                DataTable temp = std.getStudent(cmd);
-                DataRow[] run = temp.Select("bdate >= '" + dMin + "' AND bdate <= '" + dMax + "'");
-                dataGridView_Print.ReadOnly = false;
-                picCol = new DataGridViewImageColumn();
-                dataGridView_Print.RowTemplate.Height = 80;
-                dataGridView_Print.DataSource = run;
-                picCol = (DataGridViewImageColumn)dataGridView_Print.Columns[7];
-                picCol.ImageLayout = DataGridViewImageCellLayout.Stretch;
-                dataGridView_Print.AllowUserToAddRows = false;
-                /*
-                DateTime dMin = dtPicker_min.Value;
-                DateTime dMax = dateTimePicker2.Value;
-                cmd = new SqlCommand("SELECT * FROM '"+std.getStudent(cmd)+"' WHERE bdate >= '" + dMin + "' AND bdate <= '" + dMax + "'");
-                dataGridView_Print.ReadOnly = false;
-                picCol = new DataGridViewImageColumn();
-                dataGridView_Print.RowTemplate.Height = 80;
-                dataGridView_Print.DataSource = std.getStudent(cmd);
-                picCol = (DataGridViewImageColumn)dataGridView_Print.Columns[7];
-                picCol.ImageLayout = DataGridViewImageCellLayout.Stretch;
-                dataGridView_Print.AllowUserToAddRows = false;*/
-            }
-            else
-            {
-                
-                /*
-                MY_DB db = new MY_DB();
-                cmd = new SqlCommand("SELECT * FROM Std", db.getConnection);
-                db.OpenConnection();
-                SqlDataAdapter sda = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                sda.Fill(dt);
-                db.closeConnection();
-                dataGridView_Print.AutoResizeColumnHeadersHeight();
-                dataGridView_Print.DataSource = dt;
-                dataGridView_Print.ReadOnly = true;
-                // image size
-
-                picCol = new DataGridViewImageColumn();
-                //dataGridView_Print.RowTemplate.MinimumHeight = 500;
-                dataGridView_Print.DataSource = dt;
-                picCol = (DataGridViewImageColumn)dataGridView_Print.Columns[7];
-                picCol.ImageLayout = DataGridViewImageCellLayout.Stretch;
-                dataGridView_Print.AllowUserToAddRows = false;
-                */
-            }
+            dataGridView_Print.Columns[3].DefaultCellStyle.Format = "MM/dd/yyyy";
         }
 
+        private void rb_No_dateRang_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
         private void button3_Click(object sender, EventArgs e)
         {
             PrintDialog pdialog = new PrintDialog();
@@ -135,7 +129,7 @@ namespace check
 
         private void radioButton4_CheckedChanged(object sender, EventArgs e)
         {
-            
+
         }
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
@@ -158,6 +152,11 @@ namespace check
 
         }
         private void rbFemaleStd_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

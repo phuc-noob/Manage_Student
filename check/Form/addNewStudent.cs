@@ -82,5 +82,10 @@ namespace check
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void bt_cancer_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

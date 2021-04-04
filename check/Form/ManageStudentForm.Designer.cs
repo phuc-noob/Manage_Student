@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageStudentForm));
             this.bt_Add = new System.Windows.Forms.Button();
             this.bt_remove = new System.Windows.Forms.Button();
             this.bt_upload_Image = new System.Windows.Forms.Button();
@@ -177,9 +178,11 @@
             this.rbFemale.TabIndex = 29;
             this.rbFemale.Text = "Female";
             this.rbFemale.UseVisualStyleBackColor = true;
+            this.rbFemale.Click += new System.EventHandler(this.rbFemale_Click);
             // 
             // rbMale
             // 
+            this.rbMale.AutoCheck = false;
             this.rbMale.AutoSize = true;
             this.rbMale.Checked = true;
             this.rbMale.Location = new System.Drawing.Point(126, 178);
@@ -191,6 +194,7 @@
             this.rbMale.Text = "Male";
             this.rbMale.UseVisualStyleBackColor = true;
             this.rbMale.CheckedChanged += new System.EventHandler(this.rbMale_CheckedChanged);
+            this.rbMale.Click += new System.EventHandler(this.rbMale_Click);
             // 
             // dt_picker_student
             // 
@@ -278,7 +282,7 @@
             this.dt_gridview_mangeStudent.Name = "dt_gridview_mangeStudent";
             this.dt_gridview_mangeStudent.RowHeadersWidth = 51;
             this.dt_gridview_mangeStudent.RowTemplate.Height = 80;
-            this.dt_gridview_mangeStudent.Size = new System.Drawing.Size(704, 468);
+            this.dt_gridview_mangeStudent.Size = new System.Drawing.Size(746, 468);
             this.dt_gridview_mangeStudent.TabIndex = 40;
             this.dt_gridview_mangeStudent.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dt_gridview_mangeStudent_CellDoubleClick);
             // 
@@ -316,7 +320,7 @@
             this.bt_total_student.TabIndex = 43;
             this.bt_total_student.Text = "Total Student";
             this.bt_total_student.UseVisualStyleBackColor = false;
-            this.bt_total_student.Click += new System.EventHandler(this.button3_Click);
+            this.bt_total_student.Click += new System.EventHandler(this.bt_total_student_Click);
             // 
             // textBox1
             // 
@@ -347,6 +351,7 @@
             this.bt_Search.TabIndex = 46;
             this.bt_Search.Text = "Search";
             this.bt_Search.UseVisualStyleBackColor = false;
+            this.bt_Search.Click += new System.EventHandler(this.bt_Search_Click);
             // 
             // bt_download_image
             // 
@@ -370,6 +375,7 @@
             this.bt_Find.TabIndex = 48;
             this.bt_Find.Text = "Find";
             this.bt_Find.UseVisualStyleBackColor = false;
+            this.bt_Find.Click += new System.EventHandler(this.bt_Find_Click);
             // 
             // ManageStudentForm
             // 
@@ -408,6 +414,7 @@
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ManageStudentForm";
             this.Text = "ManageStudentForm";
             this.Load += new System.EventHandler(this.ManageStudentForm_Load);

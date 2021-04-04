@@ -22,11 +22,8 @@ namespace check
             InitializeComponent();
         }
 
-        
-
         private void StudentList_Load(object sender, EventArgs e)
         {
-
             MY_DB db = new MY_DB();
             SqlCommand cmd = new SqlCommand("SELECT * FROM Std",db.getConnection);
             db.OpenConnection();
@@ -35,24 +32,24 @@ namespace check
             sda.Fill(dt);
             db.closeConnection();
             dataGridView1.AutoResizeColumnHeadersHeight();
+            
             dataGridView1.DataSource = dt;
             dataGridView1.ReadOnly = true;
             // image size
             
             DataGridViewImageColumn picCol = new DataGridViewImageColumn();
-            dataGridView1.RowTemplate.MinimumHeight = 100;
+            dataGridView1.RowTemplate.MinimumHeight = 80;
             dataGridView1.DataSource = dt;
             picCol = (DataGridViewImageColumn)dataGridView1.Columns[7];
             picCol.ImageLayout = DataGridViewImageCellLayout.Stretch;
             dataGridView1.AllowUserToAddRows = false;
-            
+            dataGridView1.Columns[3].DefaultCellStyle.Format = "MM/dd/yyyy";
         }
 
         private void dataGridView1_CancelRowEdit(object sender, QuestionEventArgs e)
         {
 
         }
-
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             
@@ -85,6 +82,11 @@ namespace check
             this.Hide();
             fStd.ShowDialog();
             this.Close();
+        }
+
+        private void bt_refresh_Click(object sender, EventArgs e)
+        {
+            this.StudentList_Load(sender, e);
         }
     }
 }

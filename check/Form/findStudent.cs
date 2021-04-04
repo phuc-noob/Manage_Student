@@ -65,41 +65,7 @@ namespace check
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            try
-            {
-                Student sdt = new Student();
-                int id = int.Parse(textId.Text);
-                SqlCommand cmd = new SqlCommand("SELECT id,fname,lname,bdate,gender,phone,address,picture FROM Std WHERE id =" + id);
-                DataTable dt = sdt.getStudent(cmd);
 
-                if (dt.Rows.Count > 0)
-                {
-                    textFname.Text = dt.Rows[0]["fname"].ToString();
-                    textLname.Text = dt.Rows[0]["lname"].ToString();
-
-                    dateTimePicker_Student.Value = (DateTime)dt.Rows[0]["bdate"];
-
-                    if (dt.Rows[0]["gender"].ToString() == "Female")
-                    {
-                        rbFemale.Checked = true;
-                    }
-                    else
-                    {
-                        rbMale.Checked = true;
-                    }
-                    textPhone.Text = dt.Rows[0]["phone"].ToString();
-                    textAddress.Text = dt.Rows[0]["address"].ToString();
-
-                    byte[] pic = (byte[])dt.Rows[0]["picture"];
-                    MemoryStream picture = new MemoryStream(pic);
-                    pic_box_infoStudent.Image = Image.FromStream(picture);
-                }
-            }
-            catch
-            {
-                MessageBox.Show("error to find....");
-            }
-            
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -217,6 +183,49 @@ namespace check
 
                 }
             }
+        }
+
+        private void bt_find_student_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Student sdt = new Student();
+                int id = int.Parse(textId.Text);
+                SqlCommand cmd = new SqlCommand("SELECT id,fname,lname,bdate,gender,phone,address,picture FROM Std WHERE id =" + id);
+                DataTable dt = sdt.getStudent(cmd);
+
+                if (dt.Rows.Count > 0)
+                {
+                    textFname.Text = dt.Rows[0]["fname"].ToString();
+                    textLname.Text = dt.Rows[0]["lname"].ToString();
+
+                    dateTimePicker_Student.Value = (DateTime)dt.Rows[0]["bdate"];
+
+                    if (dt.Rows[0]["gender"].ToString() == "Female")
+                    {
+                        rbFemale.Checked = true;
+                    }
+                    else
+                    {
+                        rbMale.Checked = true;
+                    }
+                    textPhone.Text = dt.Rows[0]["phone"].ToString();
+                    textAddress.Text = dt.Rows[0]["address"].ToString();
+
+                    byte[] pic = (byte[])dt.Rows[0]["picture"];
+                    MemoryStream picture = new MemoryStream(pic);
+                    pic_box_infoStudent.Image = Image.FromStream(picture);
+                }
+                else
+                {
+                    MessageBox.Show("Student Not Found", "ERROR TO FIND STUDENT", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message,"ERROR TO FIND",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+
         }
     }
 }
