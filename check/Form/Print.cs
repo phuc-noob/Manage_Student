@@ -19,15 +19,8 @@ namespace check
             InitializeComponent();
         }
         MY_DB db = new MY_DB();
-        private void dataGridView_Print_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
-
-        private void dataGridView_Print_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+        
+      
 
         private void Print_Load(object sender, EventArgs e)
         {
@@ -117,48 +110,13 @@ namespace check
             dataGridView_Print.Columns[3].DefaultCellStyle.Format = "MM/dd/yyyy";
         }
 
-        private void rb_No_dateRang_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
+        
         private void button3_Click(object sender, EventArgs e)
         {
             PrintDialog pdialog = new PrintDialog();
             pdialog.ShowDialog();
         }
-
-        private void radioButton4_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void radioButton3_CheckedChanged(object sender, EventArgs e)
-        {
-
-
-        }
-        private void rb_AllStd_CheckedChanged(object sender, EventArgs e)
-        {
-        }
-        private void dataGridView_Print_CellContentClick_2(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-        private void dataGridView_Print_CellContentClick_3(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-        private void radioButton5_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void rbFemaleStd_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+       
+        
     }
 }

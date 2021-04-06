@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -19,21 +20,6 @@ namespace check
             InitializeComponent();
         }
         private Student student = new Student();
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void rbMale_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void ManageStudentForm_Load(object sender, EventArgs e)
         {
@@ -55,13 +41,8 @@ namespace check
             picCol = (DataGridViewImageColumn)dt_gridview_mangeStudent.Columns[7];
             picCol.ImageLayout = DataGridViewImageCellLayout.Stretch;
             dt_gridview_mangeStudent.AllowUserToAddRows = false;
+            dt_gridview_mangeStudent.Columns[3].DefaultCellStyle.Format = "MM/dd/yyyy";
         }
-
-        private void dt_gridview_mangeStudent_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void button3_Click(object sender, EventArgs e)
         {
             MY_DB db = new MY_DB();
@@ -335,6 +316,18 @@ namespace check
             int totalStd = student.getTotalStd();
             string totalText = string.Format("Total Student : {0}", totalStd);
             bt_total_student.Text = totalText;
+        }
+
+        private void bt_download_image_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog svf = new SaveFileDialog();
+            svf.FileName = "Student_" + textId.Text;
+            if(pic_box_Std.Image == null)
+            {
+                MessageBox.Show("Image not exist !", "NOTIFICATION", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }else if(svf.ShowDialog() == DialogResult.OK){
+                pic_box_Std.Image.Save((svf.FileName + ("." + ImageFormat.Jpeg.ToString())));
+            }
         }
     }
 }

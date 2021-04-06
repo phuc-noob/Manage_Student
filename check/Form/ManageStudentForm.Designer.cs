@@ -193,7 +193,6 @@
             this.rbMale.TabStop = true;
             this.rbMale.Text = "Male";
             this.rbMale.UseVisualStyleBackColor = true;
-            this.rbMale.CheckedChanged += new System.EventHandler(this.rbMale_CheckedChanged);
             this.rbMale.Click += new System.EventHandler(this.rbMale_Click);
             // 
             // dt_picker_student
@@ -339,7 +338,6 @@
             this.label9.Size = new System.Drawing.Size(239, 17);
             this.label9.TabIndex = 45;
             this.label9.Text = "Search Fname, Lname, Address";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // bt_Search
             // 
@@ -363,7 +361,7 @@
             this.bt_download_image.TabIndex = 47;
             this.bt_download_image.Text = "Download";
             this.bt_download_image.UseVisualStyleBackColor = true;
-            this.bt_download_image.Click += new System.EventHandler(this.button5_Click);
+            this.bt_download_image.Click += new System.EventHandler(this.bt_download_image_Click);
             // 
             // bt_Find
             // 

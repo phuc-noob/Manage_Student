@@ -62,7 +62,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1144, 122);
             this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            //this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // bt_check_Print
             // 
@@ -131,7 +131,7 @@
             this.rb_No.TabStop = true;
             this.rb_No.Text = "No";
             this.rb_No.UseVisualStyleBackColor = true;
-            this.rb_No.CheckedChanged += new System.EventHandler(this.rb_No_dateRang_CheckedChanged);
+            //this.rb_No.CheckedChanged += new System.EventHandler(this.rb_No_dateRang_CheckedChanged);
             // 
             // rb_Yes
             // 
@@ -144,7 +144,7 @@
             this.rb_Yes.TabIndex = 3;
             this.rb_Yes.Text = "Yes";
             this.rb_Yes.UseVisualStyleBackColor = true;
-            this.rb_Yes.CheckedChanged += new System.EventHandler(this.rb_No_dateRang_CheckedChanged);
+            //this.rb_Yes.CheckedChanged += new System.EventHandler(this.rb_No_dateRang_CheckedChanged);
             // 
             // label2
             // 
@@ -177,7 +177,7 @@
             this.rbMaleStd.TabIndex = 2;
             this.rbMaleStd.Text = "Male";
             this.rbMaleStd.UseVisualStyleBackColor = true;
-            this.rbMaleStd.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
+            //this.rbMaleStd.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
             // 
             // rbFemaleStd
             // 
@@ -190,7 +190,7 @@
             this.rbFemaleStd.TabIndex = 1;
             this.rbFemaleStd.Text = "Female";
             this.rbFemaleStd.UseVisualStyleBackColor = true;
-            this.rbFemaleStd.CheckedChanged += new System.EventHandler(this.rbFemaleStd_CheckedChanged);
+            //this.rbFemaleStd.CheckedChanged += new System.EventHandler(this.rbFemaleStd_CheckedChanged);
             // 
             // rb_AllStd
             // 
@@ -205,7 +205,7 @@
             this.rb_AllStd.TabStop = true;
             this.rb_AllStd.Text = "ALL";
             this.rb_AllStd.UseVisualStyleBackColor = true;
-            this.rb_AllStd.CheckedChanged += new System.EventHandler(this.rb_AllStd_CheckedChanged);
+            //this.rb_AllStd.CheckedChanged += new System.EventHandler(this.rb_AllStd_CheckedChanged);
             // 
             // bt_Save_Text_file
             // 
@@ -239,7 +239,7 @@
             this.dataGridView_Print.RowTemplate.ReadOnly = true;
             this.dataGridView_Print.Size = new System.Drawing.Size(1148, 464);
             this.dataGridView_Print.TabIndex = 4;
-            this.dataGridView_Print.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Print_CellContentClick_3);
+            //this.dataGridView_Print.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Print_CellContentClick_3);
             // 
             // printDialog1
             // 

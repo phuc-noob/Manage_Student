@@ -143,7 +143,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(438, 298);
             this.panel1.TabIndex = 9;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            //this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label4
             // 
@@ -155,7 +155,7 @@
             this.label4.Size = new System.Drawing.Size(176, 46);
             this.label4.TabIndex = 9;
             this.label4.Text = "Register";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            //this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // pictureBox1
             // 
