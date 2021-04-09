@@ -16,3 +16,8 @@ D:\WinformProject\check\check\obj\Debug\check.StatisForm.resources
 D:\WinformProject\check\check\obj\Debug\check.Print.resources
 D:\WinformProject\check\check\obj\Debug\check.ManageStudentForm.resources
 D:\WinformProject\check\check\obj\Debug\check.fLogin.resources
+D:\WinformProject\check\check\obj\Debug\check.AddCourse.resources
+D:\WinformProject\check\check\obj\Debug\check.RemoveCourse.resources
+D:\WinformProject\check\check\obj\Debug\check.EditCourse.resources
+D:\WinformProject\check\check\obj\Debug\Interop.Office.dll
+D:\WinformProject\check\check\obj\Debug\check.csproj.ResolveComReference.cache

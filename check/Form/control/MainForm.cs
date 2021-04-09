@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace check
 {
-    public partial class MainForm : Form
+    public partial class PhanVinhPhuc_19110434_MainForm : Form
     {
-        public MainForm()
+        public PhanVinhPhuc_19110434_MainForm()
         {
             InitializeComponent();
         }
@@ -70,6 +70,24 @@ namespace check
         {
             ManageStudentForm fManage = new ManageStudentForm();
             fManage.Show();
+        }
+
+        private void toolTrip_AddCourse_Click(object sender, EventArgs e)
+        {
+            AddCourse addC = new AddCourse();
+            addC.Show();
+        }
+
+        private void toolTrip_removeCourse_Click(object sender, EventArgs e)
+        {
+            RemoveCourse rCourse = new RemoveCourse();
+            rCourse.Show();
+        }
+
+        private void toolTripEdit_Click(object sender, EventArgs e)
+        {
+            EditCourse ed = new EditCourse();
+            ed.Show();
         }
     }
 }

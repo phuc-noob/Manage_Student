@@ -24,10 +24,10 @@ namespace check
             get { return this.textId; }
             set { this.textId = value; }
         }
-        public RadioButton gmale
+        public bool gdMale
         {
-            get { return this.rbMale; }
-            set { this.rbMale = value; }
+            get { return this.rbMale.Checked; }
+            set { this.rbMale.Checked = value; }
         }
         public TextBox text_name
         {
@@ -44,9 +44,9 @@ namespace check
             get { return this.dateTimePicker_Student.Value; }
             set { this.dateTimePicker_Student.Value = value; }
         }
-        public RadioButton gender { 
-            get { return this.rbFemale; }
-            set { this.rbFemale=value; }
+        public bool gdFemale { 
+            get { return this.rbFemale.Checked; }
+            set { this.rbFemale.Checked=value; }
         }
         public TextBox phone
         {
@@ -116,20 +116,7 @@ namespace check
             }
         }
 
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textId_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void rbMale_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void bt_update_image_Click(object sender, EventArgs e)
         {
@@ -200,14 +187,16 @@ namespace check
                     textLname.Text = dt.Rows[0]["lname"].ToString();
 
                     dateTimePicker_Student.Value = (DateTime)dt.Rows[0]["bdate"];
-
-                    if (dt.Rows[0]["gender"].ToString() == "Female")
+                    string gd = dt.Rows[0]["gender"].ToString();
+                    if (gd.Contains("Female"))
                     {
                         rbFemale.Checked = true;
+                        rbMale.Checked = false;
                     }
                     else
                     {
                         rbMale.Checked = true;
+                        rbFemale.Checked = false;
                     }
                     textPhone.Text = dt.Rows[0]["phone"].ToString();
                     textAddress.Text = dt.Rows[0]["address"].ToString();
@@ -225,6 +214,11 @@ namespace check
             {
                 MessageBox.Show(ex.Message,"ERROR TO FIND",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
+
+        }
+
+        private void findStudent_Load(object sender, EventArgs e)
+        {
 
         }
     }

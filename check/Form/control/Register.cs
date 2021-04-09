@@ -36,7 +36,7 @@ namespace check
                     cmd.Parameters.Add("@password", textPassword.Text);
                     if (cmd.ExecuteNonQuery() == 1)
                     {
-                        MainForm fmain = new MainForm();
+                        PhanVinhPhuc_19110434_MainForm fmain = new PhanVinhPhuc_19110434_MainForm();
                         this.Hide();
                         fmain.ShowDialog();
                         this.Close();

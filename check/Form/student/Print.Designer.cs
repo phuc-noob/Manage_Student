@@ -62,7 +62,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1144, 122);
             this.panel1.TabIndex = 0;
-            //this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // bt_check_Print
             // 
@@ -131,7 +130,7 @@
             this.rb_No.TabStop = true;
             this.rb_No.Text = "No";
             this.rb_No.UseVisualStyleBackColor = true;
-            //this.rb_No.CheckedChanged += new System.EventHandler(this.rb_No_dateRang_CheckedChanged);
+            this.rb_No.CheckedChanged += new System.EventHandler(this.rb_No_CheckedChanged);
             // 
             // rb_Yes
             // 
@@ -144,7 +143,7 @@
             this.rb_Yes.TabIndex = 3;
             this.rb_Yes.Text = "Yes";
             this.rb_Yes.UseVisualStyleBackColor = true;
-            //this.rb_Yes.CheckedChanged += new System.EventHandler(this.rb_No_dateRang_CheckedChanged);
+            this.rb_Yes.CheckedChanged += new System.EventHandler(this.rb_Yes_CheckedChanged);
             // 
             // label2
             // 
@@ -177,7 +176,6 @@
             this.rbMaleStd.TabIndex = 2;
             this.rbMaleStd.Text = "Male";
             this.rbMaleStd.UseVisualStyleBackColor = true;
-            //this.rbMaleStd.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
             // 
             // rbFemaleStd
             // 
@@ -190,7 +188,6 @@
             this.rbFemaleStd.TabIndex = 1;
             this.rbFemaleStd.Text = "Female";
             this.rbFemaleStd.UseVisualStyleBackColor = true;
-            //this.rbFemaleStd.CheckedChanged += new System.EventHandler(this.rbFemaleStd_CheckedChanged);
             // 
             // rb_AllStd
             // 
@@ -205,7 +202,6 @@
             this.rb_AllStd.TabStop = true;
             this.rb_AllStd.Text = "ALL";
             this.rb_AllStd.UseVisualStyleBackColor = true;
-            //this.rb_AllStd.CheckedChanged += new System.EventHandler(this.rb_AllStd_CheckedChanged);
             // 
             // bt_Save_Text_file
             // 
@@ -214,8 +210,9 @@
             this.bt_Save_Text_file.Name = "bt_Save_Text_file";
             this.bt_Save_Text_file.Size = new System.Drawing.Size(229, 36);
             this.bt_Save_Text_file.TabIndex = 2;
-            this.bt_Save_Text_file.Text = "Save To Text File";
+            this.bt_Save_Text_file.Text = "Save File";
             this.bt_Save_Text_file.UseVisualStyleBackColor = false;
+            this.bt_Save_Text_file.Click += new System.EventHandler(this.bt_Save_Text_file_Click);
             // 
             // bt_printer
             // 
@@ -226,7 +223,7 @@
             this.bt_printer.TabIndex = 3;
             this.bt_printer.Text = "Printer";
             this.bt_printer.UseVisualStyleBackColor = false;
-            this.bt_printer.Click += new System.EventHandler(this.button3_Click);
+            this.bt_printer.Click += new System.EventHandler(this.bt_printer_Click);
             // 
             // dataGridView_Print
             // 
@@ -239,7 +236,6 @@
             this.dataGridView_Print.RowTemplate.ReadOnly = true;
             this.dataGridView_Print.Size = new System.Drawing.Size(1148, 464);
             this.dataGridView_Print.TabIndex = 4;
-            //this.dataGridView_Print.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Print_CellContentClick_3);
             // 
             // printDialog1
             // 

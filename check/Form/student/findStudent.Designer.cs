@@ -157,7 +157,6 @@
             this.rbMale.TabStop = true;
             this.rbMale.Text = "Male";
             this.rbMale.UseVisualStyleBackColor = true;
-            this.rbMale.CheckedChanged += new System.EventHandler(this.rbMale_CheckedChanged);
             // 
             // dateTimePicker_Student
             // 
@@ -170,7 +169,6 @@
             this.dateTimePicker_Student.Size = new System.Drawing.Size(274, 22);
             this.dateTimePicker_Student.TabIndex = 25;
             this.dateTimePicker_Student.Value = new System.DateTime(2021, 3, 18, 10, 7, 40, 0);
-            this.dateTimePicker_Student.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // label4
             // 
@@ -206,7 +204,6 @@
             this.textId.Name = "textId";
             this.textId.Size = new System.Drawing.Size(118, 28);
             this.textId.TabIndex = 21;
-            this.textId.TextChanged += new System.EventHandler(this.textId_TextChanged);
             // 
             // label3
             // 
@@ -316,6 +313,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "findStudent";
             this.Text = "findStudent";
+            this.Load += new System.EventHandler(this.findStudent_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pic_box_infoStudent)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

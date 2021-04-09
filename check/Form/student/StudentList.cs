@@ -46,19 +46,7 @@ namespace check
             dataGridView1.Columns[3].DefaultCellStyle.Format = "MM/dd/yyyy";
         }
 
-        private void dataGridView1_CancelRowEdit(object sender, QuestionEventArgs e)
-        {
-
-        }
-        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-               
-        }
+       
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -67,17 +55,21 @@ namespace check
             fStd.text_name.Text =dataGridView1.CurrentRow.Cells[1].Value.ToString();
             fStd.text_lname.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
             fStd.dtime = (DateTime)dataGridView1.CurrentRow.Cells[3].Value;
-            if (dataGridView1.CurrentRow.Cells[4].ToString() == "Female") {
-                fStd.gender.Checked = true;
+            string gd = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+            if ( gd.Contains("Female")) {
+                fStd.gdFemale = true;
+                fStd.gdMale = false;
             }
             else
             {
-                fStd.gender.Checked = false;
+                fStd.gdMale = true;
+                fStd.gdFemale = false;
             }
             fStd.phone.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
             fStd.address.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
             byte[] pic = (byte[])dataGridView1.CurrentRow.Cells[7].Value;
             MemoryStream picture = new MemoryStream(pic);
+
             fStd.StdImage.Image = Image.FromStream(picture);
             this.Hide();
             fStd.ShowDialog();

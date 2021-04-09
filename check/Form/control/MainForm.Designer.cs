@@ -1,6 +1,6 @@
 ﻿namespace check
 {
-    partial class MainForm
+    partial class PhanVinhPhuc_19110434_MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PhanVinhPhuc_19110434_MainForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.aDDSTUDENTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -37,8 +37,13 @@
             this.eDITREMOVEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTrip_manageStudent = new System.Windows.Forms.ToolStripMenuItem();
             this.pRINTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.sCOREToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolTrip_AddCourse = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolTrip_removeCourse = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolTripEdit = new System.Windows.Forms.ToolStripMenuItem();
+            this.mANAGECOURSEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pRINTToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -110,20 +115,74 @@
             this.pRINTToolStripMenuItem.Text = "PRINT";
             this.pRINTToolStripMenuItem.Click += new System.EventHandler(this.pRINTToolStripMenuItem_Click);
             // 
-            // toolStripMenuItem3
-            // 
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(78, 24);
-            this.toolStripMenuItem3.Text = "COURSE";
-            this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
-            // 
             // sCOREToolStripMenuItem
             // 
             this.sCOREToolStripMenuItem.Name = "sCOREToolStripMenuItem";
             this.sCOREToolStripMenuItem.Size = new System.Drawing.Size(68, 24);
             this.sCOREToolStripMenuItem.Text = "SCORE";
             // 
-            // MainForm
+            // toolTrip_AddCourse
+            // 
+            this.toolTrip_AddCourse.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.toolTrip_AddCourse.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolTrip_AddCourse.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.toolTrip_AddCourse.Name = "toolTrip_AddCourse";
+            this.toolTrip_AddCourse.Size = new System.Drawing.Size(235, 28);
+            this.toolTrip_AddCourse.Text = "ADD COURSE";
+            this.toolTrip_AddCourse.Click += new System.EventHandler(this.toolTrip_AddCourse_Click);
+            // 
+            // toolTrip_removeCourse
+            // 
+            this.toolTrip_removeCourse.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.toolTrip_removeCourse.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolTrip_removeCourse.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.toolTrip_removeCourse.Name = "toolTrip_removeCourse";
+            this.toolTrip_removeCourse.Size = new System.Drawing.Size(235, 28);
+            this.toolTrip_removeCourse.Text = "REMOVE COURSE";
+            this.toolTrip_removeCourse.Click += new System.EventHandler(this.toolTrip_removeCourse_Click);
+            // 
+            // toolTripEdit
+            // 
+            this.toolTripEdit.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.toolTripEdit.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolTripEdit.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.toolTripEdit.Name = "toolTripEdit";
+            this.toolTripEdit.Size = new System.Drawing.Size(235, 28);
+            this.toolTripEdit.Text = "EDIT COURSE";
+            this.toolTripEdit.Click += new System.EventHandler(this.toolTripEdit_Click);
+            // 
+            // mANAGECOURSEToolStripMenuItem
+            // 
+            this.mANAGECOURSEToolStripMenuItem.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.mANAGECOURSEToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mANAGECOURSEToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.mANAGECOURSEToolStripMenuItem.Name = "mANAGECOURSEToolStripMenuItem";
+            this.mANAGECOURSEToolStripMenuItem.Size = new System.Drawing.Size(235, 28);
+            this.mANAGECOURSEToolStripMenuItem.Text = "MANAGE COURSE";
+            // 
+            // pRINTToolStripMenuItem1
+            // 
+            this.pRINTToolStripMenuItem1.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.pRINTToolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pRINTToolStripMenuItem1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pRINTToolStripMenuItem1.Name = "pRINTToolStripMenuItem1";
+            this.pRINTToolStripMenuItem1.Size = new System.Drawing.Size(235, 28);
+            this.pRINTToolStripMenuItem1.Text = "PRINT";
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolTrip_AddCourse,
+            this.toolTrip_removeCourse,
+            this.toolTripEdit,
+            this.mANAGECOURSEToolStripMenuItem,
+            this.pRINTToolStripMenuItem1});
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(78, 24);
+            this.toolStripMenuItem3.Text = "COURSE";
+            this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
+            // 
+            // PhanVinhPhuc_19110434_MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -132,8 +191,8 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "MainForm";
-            this.Text = "MainForm";
+            this.Name = "PhanVinhPhuc_19110434_MainForm";
+            this.Text = "19110434_PhanVinhPhuc_MainForm";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -145,7 +204,6 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem aDDSTUDENTToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem lISTSTUDENTToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sTATICSToolStripMenuItem;
@@ -153,5 +211,11 @@
         private System.Windows.Forms.ToolStripMenuItem toolTrip_manageStudent;
         private System.Windows.Forms.ToolStripMenuItem pRINTToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sCOREToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem toolTrip_AddCourse;
+        private System.Windows.Forms.ToolStripMenuItem toolTrip_removeCourse;
+        private System.Windows.Forms.ToolStripMenuItem toolTripEdit;
+        private System.Windows.Forms.ToolStripMenuItem mANAGECOURSEToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pRINTToolStripMenuItem1;
     }
 }

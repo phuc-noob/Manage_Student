@@ -47,6 +47,7 @@ namespace check
         {
             SqlCommand command = new SqlCommand("INSERT INTO Std (id,fname,lname,bdate,gender,phone,address,picture)" 
                 + "VALUES (@id,@fn,@ln,@bdate,@gender,@phone,@address,@picture)",db.getConnection);
+
             command.Parameters.Add("@id", System.Data.SqlDbType.Int).Value = id;
             command.Parameters.Add("@fn", System.Data.SqlDbType.VarChar).Value = fName;
             command.Parameters.Add("@ln", System.Data.SqlDbType.VarChar).Value = lName;

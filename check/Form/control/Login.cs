@@ -45,7 +45,7 @@ namespace check
             {
                 if (table.Rows.Count > 0)
                 {
-                    MainForm fMain = new MainForm();
+                    PhanVinhPhuc_19110434_MainForm fMain = new PhanVinhPhuc_19110434_MainForm();
                     this.Hide();
                     fMain.ShowDialog();
                     this.Close();
