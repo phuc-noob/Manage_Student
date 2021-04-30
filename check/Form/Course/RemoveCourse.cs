@@ -20,15 +20,29 @@ namespace check
         private void bt_Remove_Click(object sender, EventArgs e)
         {
             Course crs = new Course();
-            int id = int.Parse(tb_ID.Text);
-            if (crs.removeCourse(id))
+            try
             {
-                MessageBox.Show("Course Deleted", "Delete Course", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if(MessageBox.Show("Are yousure you want to delete this Course","Remve Course",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    int id = int.Parse(tb_ID.Text);
+                    if (crs.removeCourse(id))
+                    {
+                        MessageBox.Show("Course Deleted", "Delete Course", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("ERROR TO DELETE ", "Delete Course", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("ERROR TO DELETE ", "Delete Course", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
             }
+            
+           
+            
         }
     }
 }

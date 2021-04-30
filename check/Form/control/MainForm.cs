@@ -17,21 +17,6 @@ namespace check
             InitializeComponent();
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void comboBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void toolStripMenuItem3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void aDDSTUDENTToolStripMenuItem_Click(object sender, EventArgs e)
         {
             infoStudent ifStu = new infoStudent();
@@ -88,6 +73,60 @@ namespace check
         {
             EditCourse ed = new EditCourse();
             ed.Show();
+        }
+
+        private void toolTripManageCourse_Click(object sender, EventArgs e)
+        {
+            manageCourse mCourse = new manageCourse();
+            mCourse.Show();
+        }
+
+        private void toolTripAddScore_Click(object sender, EventArgs e)
+        {
+            AddScoreForm aScore = new AddScoreForm();
+            aScore.Show();
+        }
+
+        private void toolTripPrintCourse_Click(object sender, EventArgs e)
+        {
+            PrintCourse pCourse = new PrintCourse();
+            pCourse.Show();
+        }
+
+        private void toolTrip_RemoveScore_Click(object sender, EventArgs e)
+        {
+            RemoveScore reScore = new RemoveScore();
+            reScore.Show();
+        }
+
+        private void toolTripMangeScore_Click(object sender, EventArgs e)
+        {
+            ManageScore mScore = new ManageScore();
+            mScore.Show();
+        }
+
+        private void toolTrip_avgScore_Click(object sender, EventArgs e)
+        {
+            avgScoreByCourse avg = new avgScoreByCourse();
+            avg.Show();
+        }
+
+        private void toolTrip_print_Click(object sender, EventArgs e)
+        {
+            PrintScore pScore = new PrintScore();
+            pScore.Show();
+        }
+
+        private void toolTrip_avgResult_Click(object sender, EventArgs e)
+        {
+            ResultByAvgScore result = new ResultByAvgScore();
+            result.Show();
+        }
+
+        private void sTATICRESULTToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StaticResult sResult = new StaticResult();
+            sResult.Show();
         }
     }
 }

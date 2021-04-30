@@ -49,11 +49,9 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 80;
-            this.dataGridView1.Size = new System.Drawing.Size(976, 457);
+            this.dataGridView1.Size = new System.Drawing.Size(966, 457);
             this.dataGridView1.TabIndex = 5;
-            ///this.dataGridView1.CancelRowEdit += new System.Windows.Forms.QuestionEventHandler(this.dataGridView1_CancelRowEdit);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            //this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // bt_refresh
             // 

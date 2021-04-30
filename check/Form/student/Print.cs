@@ -1,16 +1,24 @@
-﻿using Microsoft.Office.Interop.Word;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
-using System.Drawing.Printing;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Text;
+using System.IO;
+using System.Drawing.Printing;
+using Spire.Doc;
+using Spire.Pdf;
+using Spire.Doc.Documents;
+using Spire.Doc.Fields;
+using System.Security.Policy;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace check
 {
@@ -129,53 +137,78 @@ namespace check
 
         private void bt_Save_Text_file_Click(object sender, EventArgs e)
         {
-            SaveFileDialog sfd = new SaveFileDialog();
-            sfd.Filter = "Word Document (*.doc)|*.docx";
-            sfd.FileName = "export.docx";
-            if (sfd.ShowDialog() == DialogResult.OK)
+            SaveFileDialog save = new SaveFileDialog();
+            save.DefaultExt = "*.docx";
+            save.Filter = "DOCX Files|*.docx";
+            if (save.ShowDialog() == DialogResult.OK && dataGridView_Print.Rows.Count + 1 > 0)
             {
-                Export_Data_To_Word(dataGridView_Print, sfd.FileName);
-            }
-        }
+                Spire.Doc.Document doc = new Spire.Doc.Document();
 
-        public void Export_Data_To_Word(DataGridView DGV, string filename)
-        {
-            if (DGV.Rows.Count != 0)
-            {
-                int RowCount = DGV.Rows.Count;
-                int ColumnCount = DGV.Columns.Count;
+                Spire.Doc.Documents.Paragraph paragraph1 = doc.AddSection().AddParagraph();
+                TextRange text1 = paragraph1.AppendText("DANH SACH SINH VIEN\n");
+                TextRange text2 = paragraph1.AppendText("HK II Nam 2020-2021\n");
+                text1.CharacterFormat.FontName = "Times New Roman";
+                text2.CharacterFormat.FontName = "Times New Roman";
+                text1.CharacterFormat.FontSize = 24;
+                text2.CharacterFormat.FontSize = 13;
+                //paragraph1.Format.TextAlignment = TextAlignment.Center;              // văn bản canh giữa 
+                paragraph1.Format.HorizontalAlignment = Spire.Doc.Documents.HorizontalAlignment.Center;  // đoạn canh giữa
 
-                Document oDoc = new Document();
-                oDoc.Application.Visible = true;
+                Spire.Doc.Table table = doc.Sections[0].AddTable(true);
 
-                oDoc.PageSetup.Orientation = WdOrientation.wdOrientLandscape;
-
-                //dynamic oRange = oDoc.Content.Application.Selection.Range;
-                string oTemp = "";
-                Object oMissing = System.Reflection.Missing.Value;
-                for (int r = 0; r <= RowCount - 1; r++)
+                // Số dòng và số cột cho bảng
+                table.ResetCells(dataGridView_Print.Rows.Count + 1, dataGridView_Print.Columns.Count);
+                for (int i = 0; i < dataGridView_Print.Columns.Count; i++)
                 {
-                    oTemp = "";
-                    for (int c = 0; c < ColumnCount - 1; c++)
-                    {
-                        oTemp = oTemp + DGV.Rows[r].Cells[c].Value + "\t";
-                    }
-                    var oPara1 = oDoc.Content.Paragraphs.Add(ref oMissing);
-                    oPara1.Range.Text = oTemp;
-                    oPara1.Range.InsertParagraphAfter();
-                    byte[] imgbyte = (byte[])dataGridView_Print.Rows[r].Cells[7].Value;
-                    MemoryStream ms = new MemoryStream(imgbyte);
-                    //Image sparePicture = Image.FromStream(ms);
-                    Image finalPic = (Image)(new Bitmap(Image.FromStream(ms), new Size(50, 50)));
-                    Clipboard.SetDataObject(finalPic);
-                    var oPara2 = oDoc.Content.Paragraphs.Add(ref oMissing);
-                    oPara2.Range.Paste();
-                    oPara2.Range.InsertParagraphAfter();
-                    //oTemp += "\n";
+                    doc.Sections[0].Tables[0].Rows[0].Cells[i].Width = 200;
                 }
 
-                //save the file
-                oDoc.SaveAs2(filename);
+                //Đặt hàng đầu tiên là header
+                Spire.Doc.TableRow Frow = table.Rows[0];
+                Frow.IsHeader = true;
+                Frow.Height = 23;
+
+                for (int i = 0; i < dataGridView_Print.Columns.Count; i++)
+                {
+                    Spire.Doc.Documents.Paragraph p = Frow.Cells[i].AddParagraph();
+                    Frow.Cells[i].CellFormat.VerticalAlignment = VerticalAlignment.Middle;
+                    p.Format.HorizontalAlignment = Spire.Doc.Documents.HorizontalAlignment.Center;
+
+                    Spire.Doc.Fields.TextRange tr = p.AppendText(dataGridView_Print.Columns[i].HeaderText);
+                    tr.CharacterFormat.FontName = "Times New Roman";
+                    tr.CharacterFormat.FontSize = 13;
+                    tr.CharacterFormat.Bold = true;
+                }
+
+                for (int i = 0; i < dataGridView_Print.Rows.Count; i++)
+                {
+                    Spire.Doc.TableRow DataRow = table.Rows[i + 1];
+                    Spire.Doc.Documents.Paragraph paragraph;
+                    for (int j = 0; j < dataGridView_Print.Columns.Count - 1; j++)
+                    {
+                        DataRow.Height = 100;
+                        DataRow.Cells[j].CellFormat.VerticalAlignment = VerticalAlignment.Middle;
+                        paragraph = DataRow.Cells[j].AddParagraph();
+                        paragraph.Format.HorizontalAlignment = Spire.Doc.Documents.HorizontalAlignment.Center;
+                        Spire.Doc.Fields.TextRange text = paragraph.AppendText(dataGridView_Print.Rows[i].Cells[j].Value.ToString());
+                        text.CharacterFormat.FontName = "Times New Roman";
+                        text.CharacterFormat.FontSize = 13;
+                    }
+
+                    DataRow.Cells[3].Paragraphs[0].Text = "";
+                    DateTime date = (DateTime)dataGridView_Print.Rows[i].Cells[3].Value;
+                    DataRow.Cells[3].Paragraphs[0].Text = date.ToString("dd/MM/yyyy");
+
+                    paragraph = DataRow.Cells[7].AddParagraph();
+                    byte[] pic;
+                    pic = (byte[])dataGridView_Print.Rows[i].Cells[7].Value;
+                    MemoryStream picture = new MemoryStream(pic);
+                    System.Drawing.Image image = System.Drawing.Image.FromStream(picture);
+                    DocPicture pc = paragraph.AppendPicture(image);
+                    pc.Height = 100; pc.Width = 100;
+                }
+                doc.SaveToFile(save.FileName);
+                doc.Close();
             }
         }
     }

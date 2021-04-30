@@ -92,6 +92,7 @@
             this.textPassword.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.textPassword.Location = new System.Drawing.Point(184, 132);
             this.textPassword.Name = "textPassword";
+            this.textPassword.PasswordChar = '#';
             this.textPassword.Size = new System.Drawing.Size(217, 27);
             this.textPassword.TabIndex = 5;
             // 
@@ -101,6 +102,7 @@
             this.textConfirm.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.textConfirm.Location = new System.Drawing.Point(184, 176);
             this.textConfirm.Name = "textConfirm";
+            this.textConfirm.PasswordChar = '$';
             this.textConfirm.Size = new System.Drawing.Size(217, 27);
             this.textConfirm.TabIndex = 6;
             // 
@@ -143,7 +145,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(438, 298);
             this.panel1.TabIndex = 9;
-            //this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label4
             // 
@@ -155,7 +156,6 @@
             this.label4.Size = new System.Drawing.Size(176, 46);
             this.label4.TabIndex = 9;
             this.label4.Text = "Register";
-            //this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // pictureBox1
             // 

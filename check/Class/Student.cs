@@ -127,6 +127,29 @@ namespace check
         }
 
         // delete student by id
+
+        public DataTable getStudentById(int id)
+        {
+            db.OpenConnection();
+            DataTable dt = new DataTable();
+            SqlCommand cmd = new SqlCommand("select id,fname,lname from std where id =@id", db.getConnection);
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
+            adapter.Fill(dt);
+            db.closeConnection();
+            return dt;
+        }
+        public DataTable getStdByFname(string fname)
+        {
+            DataTable dt = new DataTable();
+            db.OpenConnection();
+            SqlCommand cmd = new SqlCommand("select id,fname,lname from std where fname =@fname", db.getConnection);
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            cmd.Parameters.Add("@fname", SqlDbType.NVarChar).Value = fname;
+            adapter.Fill(dt);
+            db.closeConnection();
+            return dt;
+        }
        
     }
 }

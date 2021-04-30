@@ -114,5 +114,10 @@ namespace check
                 db.closeConnection();
             }
         }
+        public int getTotalCourse()
+        {
+            SqlCommand cmd = new SqlCommand("select count(id) from Course", db.getConnection);
+            return (int)cmd.ExecuteScalar();
+        }
     }
 }

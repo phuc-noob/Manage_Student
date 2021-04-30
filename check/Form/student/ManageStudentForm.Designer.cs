@@ -273,7 +273,6 @@
             // 
             // dt_gridview_mangeStudent
             // 
-            this.dt_gridview_mangeStudent.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dt_gridview_mangeStudent.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dt_gridview_mangeStudent.ColumnHeadersHeight = 29;
             this.dt_gridview_mangeStudent.GridColor = System.Drawing.SystemColors.ActiveBorder;

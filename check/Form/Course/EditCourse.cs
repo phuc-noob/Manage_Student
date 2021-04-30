@@ -72,5 +72,40 @@ namespace check
             comboBoxCourse.ValueMember = "id";
             comboBoxCourse.SelectedIndex = index;
         }
+
+        private void numericUpDown_hour_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tb_des_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tb_Name_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

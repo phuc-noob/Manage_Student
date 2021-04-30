@@ -60,6 +60,7 @@
             this.tb_des.Name = "tb_des";
             this.tb_des.Size = new System.Drawing.Size(300, 106);
             this.tb_des.TabIndex = 16;
+            this.tb_des.TextChanged += new System.EventHandler(this.tb_des_TextChanged);
             // 
             // tb_Name
             // 
@@ -68,6 +69,7 @@
             this.tb_Name.Name = "tb_Name";
             this.tb_Name.Size = new System.Drawing.Size(300, 29);
             this.tb_Name.TabIndex = 15;
+            this.tb_Name.TextChanged += new System.EventHandler(this.tb_Name_TextChanged);
             // 
             // label4
             // 
@@ -79,6 +81,7 @@
             this.label4.Size = new System.Drawing.Size(146, 29);
             this.label4.TabIndex = 12;
             this.label4.Text = "Description";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
@@ -90,6 +93,7 @@
             this.label3.Size = new System.Drawing.Size(91, 29);
             this.label3.TabIndex = 11;
             this.label3.Text = "Period";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
@@ -101,6 +105,7 @@
             this.label2.Size = new System.Drawing.Size(82, 29);
             this.label2.TabIndex = 10;
             this.label2.Text = "Name";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -112,6 +117,7 @@
             this.label1.Size = new System.Drawing.Size(178, 29);
             this.label1.TabIndex = 9;
             this.label1.Text = "Select Course";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // numericUpDown_hour
             // 
@@ -130,6 +136,7 @@
             0,
             0,
             0});
+            this.numericUpDown_hour.ValueChanged += new System.EventHandler(this.numericUpDown_hour_ValueChanged);
             // 
             // comboBoxCourse
             // 

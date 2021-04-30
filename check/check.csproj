@@ -48,12 +48,34 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.WinForms, Version=0.9.7.1, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.WinForms.0.9.7.1\lib\net45\LiveCharts.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Office.Interop.Word.15.0.4797.1003\lib\net20\Microsoft.Office.Interop.Word.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Spire.Doc, Version=9.4.1.0, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\Spire.Doc.9.4.1\lib\net40\Spire.Doc.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.License, Version=1.3.8.40, Culture=neutral, PublicKeyToken=b1144360237c8b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Spire.Doc.9.4.1\lib\net40\Spire.License.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.Pdf, Version=7.3.7.0, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\Spire.Doc.9.4.1\lib\net40\Spire.Pdf.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -63,8 +85,22 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form\Score\avgScoreByCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Score\avgScoreByCourse.Designer.cs">
+      <DependentUpon>avgScoreByCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Score\AddScoreForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Score\AddScoreForm.Designer.cs">
+      <DependentUpon>AddScoreForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Class\Course.cs" />
     <Compile Include="Form\Course\EditCourse.cs">
       <SubType>Form</SubType>
@@ -116,6 +152,30 @@
     <Compile Include="Form\student\ManageStudentForm.Designer.cs">
       <DependentUpon>ManageStudentForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form\Course\manageCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Course\manageCourse.Designer.cs">
+      <DependentUpon>manageCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Course\PrintCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Course\PrintCourse.Designer.cs">
+      <DependentUpon>PrintCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Score\ManageScore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Score\ManageScore.Designer.cs">
+      <DependentUpon>ManageScore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Score\PrintScore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Score\PrintScore.Designer.cs">
+      <DependentUpon>PrintScore.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -147,11 +207,45 @@
     <Compile Include="Form\Course\RemoveCourse.Designer.cs">
       <DependentUpon>RemoveCourse.cs</DependentUpon>
     </Compile>
+    <Compile Include="Class\Score.cs" />
+    <Compile Include="Form\Score\RemoveScore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Score\RemoveScore.Designer.cs">
+      <DependentUpon>RemoveScore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Score\ResultByAvgScore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Score\ResultByAvgScore.Designer.cs">
+      <DependentUpon>ResultByAvgScore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Score\StaticResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Score\StaticResult.Designer.cs">
+      <DependentUpon>StaticResult.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form\Score\avgScoreByCourse.resx">
+      <DependentUpon>avgScoreByCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Score\AddScoreForm.resx">
+      <DependentUpon>AddScoreForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\Course\EditCourse.resx">
       <DependentUpon>EditCourse.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Course\AddCourse.resx">
       <DependentUpon>AddCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Course\PrintCourse.resx">
+      <DependentUpon>PrintCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Score\ManageScore.resx">
+      <DependentUpon>ManageScore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Score\PrintScore.resx">
+      <DependentUpon>PrintScore.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\student\findStudent.resx">
       <DependentUpon>findStudent.cs</DependentUpon>
@@ -171,6 +265,9 @@
     <EmbeddedResource Include="Form\student\Print.resx">
       <DependentUpon>Print.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\Course\manageCourse.resx">
+      <DependentUpon>manageCourse.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -187,6 +284,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Course\RemoveCourse.resx">
       <DependentUpon>RemoveCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Score\RemoveScore.resx">
+      <DependentUpon>RemoveScore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Score\ResultByAvgScore.resx">
+      <DependentUpon>ResultByAvgScore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Score\StaticResult.resx">
+      <DependentUpon>StaticResult.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -211,12 +317,14 @@
   <ItemGroup>
     <None Include="image\mylove.jpg" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="image\stduent.png" />
     <Content Include="image\student.png" />
+    <None Include="Resources\loveSoMuch.jpg" />
+    <None Include="Resources\mylove %282%29.jpg" />
+    <Content Include="Scripts\spin.js" />
+    <Content Include="Scripts\spin.min.js" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
@@ -249,6 +357,9 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
