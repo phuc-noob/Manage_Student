@@ -58,9 +58,23 @@ namespace check
             db.closeConnection();
             dataGridView_Course.AutoResizeColumnHeadersHeight();
 
+
+
             dataGridView_Course.DataSource = dt;
             dataGridView_Course.ReadOnly = true;
             dataGridView_Course.AutoResizeRows();
+            dataGridView_Course.Columns[4].Width = 70;
+
+            dataGridView_Course.Columns[0].Width = 65;
+            dataGridView_Course.Columns[2].Width = 65;
+            dataGridView_Course.Columns[0].HeaderText = "ID";
+            dataGridView_Course.Columns[1].HeaderText = "Label";
+            dataGridView_Course.Columns[2].HeaderText = "Period";
+            dataGridView_Course.Columns[3].HeaderText = "Desription";
+            dataGridView_Course.Columns[4].HeaderText = "Semester";
+            dataGridView_Course.Columns[5].HeaderText = "ID Teacher";
+            dataGridView_Course.Columns[6].HeaderText = "Name Teacher";
+
         }
 
         private void bt_print_Click(object sender, EventArgs e)
@@ -87,14 +101,18 @@ namespace check
                 Spire.Doc.Document doc = new Spire.Doc.Document();
 
                 Spire.Doc.Documents.Paragraph paragraph1 = doc.AddSection().AddParagraph();
-                Spire.Doc.Fields.TextRange text1 = paragraph1.AppendText("DANH SACH KHÓA HỌC\n");
-                Spire.Doc.Fields.TextRange text2 = paragraph1.AppendText("HK II Nam 2020-2021\n");
+                TextRange text0 = paragraph1.AppendText("TRƯỜNG ĐẠI HỌC SƯ PHẠM KỸ THUẬT TP.HỒ CHÍ MINH\n\n");
+                Spire.Doc.Fields.TextRange text1 = paragraph1.AppendText("\t\t\t\t\tDANH SACH KHÓA HỌC\n");
+                Spire.Doc.Fields.TextRange text2 = paragraph1.AppendText("\t\t\t\t\t         Kỳ II Nam 2020-2021\n");
+                text0.CharacterFormat.FontName = "Times New Roman";
                 text1.CharacterFormat.FontName = "Times New Roman";
                 text2.CharacterFormat.FontName = "Times New Roman";
-                text1.CharacterFormat.FontSize = 24;
+
+                text0.CharacterFormat.FontSize = 10;
+                text1.CharacterFormat.FontSize = 15;
                 text2.CharacterFormat.FontSize = 13;
                 //paragraph1.Format.TextAlignment = TextAlignment.Center;              // văn bản canh giữa 
-                paragraph1.Format.HorizontalAlignment = Spire.Doc.Documents.HorizontalAlignment.Center;  // đoạn canh giữa
+                paragraph1.Format.HorizontalAlignment = Spire.Doc.Documents.HorizontalAlignment.Left;  // đoạn canh giữa
 
                 Spire.Doc.Table table = doc.Sections[0].AddTable(true);
 
@@ -118,7 +136,7 @@ namespace check
 
                     Spire.Doc.Fields.TextRange tr = p.AppendText(dataGridView_Course.Columns[i].HeaderText);
                     tr.CharacterFormat.FontName = "Times New Roman";
-                    tr.CharacterFormat.FontSize = 13;
+                    tr.CharacterFormat.FontSize = 10;
                     tr.CharacterFormat.Bold = true;
                 }
 
@@ -128,14 +146,14 @@ namespace check
                     Spire.Doc.Documents.Paragraph paragraph;
                     for (int j = 0; j < dataGridView_Course.Columns.Count  ; j++)
                     {
-                        DataRow.Height = 100;
+                        DataRow.Height = 30;
                         DataRow.Cells[j].CellFormat.VerticalAlignment = VerticalAlignment.Middle;
                         paragraph = DataRow.Cells[j].AddParagraph();
                         paragraph.Format.HorizontalAlignment = Spire.Doc.Documents.HorizontalAlignment.Center;
                         string textString = dataGridView_Course.Rows[i].Cells[j].Value.ToString();
                         Spire.Doc.Fields.TextRange text = paragraph.AppendText(dataGridView_Course.Rows[i].Cells[j].Value.ToString());
                         text.CharacterFormat.FontName = "Times New Roman";
-                        text.CharacterFormat.FontSize = 13;
+                        text.CharacterFormat.FontSize = 10;
                     }
                 }
                 doc.SaveToFile(save.FileName);

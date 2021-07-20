@@ -17,14 +17,30 @@ namespace check
             InitializeComponent();
         }
         Course crs = new Course();
-
+        DataTable dt;
         private void EditCourse_Load(object sender, EventArgs e)
         {
+
+            List<int> semester = new List<int>(new int[] { 1, 2, 3, 4, 5, 6, 7, 8 });
+            comboBox_semester.DataSource = semester;
             
             comboBoxCourse.DataSource = crs.getAllCourse();
             comboBoxCourse.DisplayMember = "label";
             comboBoxCourse.ValueMember = "id";
             comboBoxCourse.SelectedItem = null;
+
+            Contact contact = new Contact();
+            dt = contact.getContact();
+            dt.Columns.Add("name", typeof(System.String));
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                dt.Rows[i]["name"] = string.Format(dt.Rows[i]["fname"].ToString() + " " + dt.Rows[i]["lname"].ToString());
+            }
+            
+            comboBox_teacher.DataSource = dt;
+            comboBox_teacher.DisplayMember = "name";
+            comboBox_teacher.ValueMember = "id";
+            comboBox_teacher.Text = "";
         }
 
         
@@ -39,6 +55,8 @@ namespace check
                 tb_Name.Text = dt.Rows[0][1].ToString();
                 numericUpDown_hour.Value = Int32.Parse(dt.Rows[0][2].ToString());
                 tb_des.Text = dt.Rows[0][3].ToString();
+                comboBox_teacher.Text = dt.Rows[0]["teacher_name"].ToString();
+                comboBox_semester.Text = dt.Rows[0]["semester"].ToString();
             }catch(Exception ex)
             {
 
@@ -51,11 +69,21 @@ namespace check
             string des = tb_des.Text;
             int hour = (int)numericUpDown_hour.Value;
             int id = Convert.ToInt32(comboBoxCourse.SelectedValue);
+            int sem = int.Parse(comboBox_semester.SelectedValue.ToString());
+            string tname = "";
+            int tid = int.Parse(comboBox_teacher.SelectedValue.ToString());
+            for (int j = 0; j < dt.Rows.Count; j++)
+            {
+                if (tid == int.Parse(dt.Rows[j]["id"].ToString()))
+                {
+                    tname = dt.Rows[j]["name"].ToString();
+                }
+            }
             if (!crs.isExistCourse(name ,Convert.ToInt32(comboBoxCourse.SelectedValue)))
             {
                 MessageBox.Show("This Course Name Aready Exist", "Edit Course Name", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else if(crs.updateCourse(id,name,hour,des))
+            else if(crs.updateCourse(id,name,hour,des,sem,tid,tname))
             {
                 MessageBox.Show("Course updated", "Edit Course", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 fillCombo(comboBoxCourse.SelectedIndex);

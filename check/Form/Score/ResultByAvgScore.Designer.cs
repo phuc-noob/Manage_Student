@@ -41,6 +41,8 @@
             this.tb_id_fname = new System.Windows.Forms.TextBox();
             this.button_print = new System.Windows.Forms.Button();
             this.bt_cancer = new System.Windows.Forms.Button();
+            this.button_static = new System.Windows.Forms.Button();
+            this.button_printer = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Result)).BeginInit();
             this.SuspendLayout();
             // 
@@ -153,29 +155,60 @@
             // 
             // button_print
             // 
-            this.button_print.Location = new System.Drawing.Point(355, 374);
+            this.button_print.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.button_print.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_print.Location = new System.Drawing.Point(710, 360);
             this.button_print.Name = "button_print";
-            this.button_print.Size = new System.Drawing.Size(153, 34);
+            this.button_print.Size = new System.Drawing.Size(163, 41);
             this.button_print.TabIndex = 41;
-            this.button_print.Text = "Print";
-            this.button_print.UseVisualStyleBackColor = true;
+            this.button_print.Text = "Save Text File";
+            this.button_print.UseVisualStyleBackColor = false;
+            this.button_print.Click += new System.EventHandler(this.button_print_Click);
             // 
             // bt_cancer
             // 
-            this.bt_cancer.Location = new System.Drawing.Point(566, 374);
+            this.bt_cancer.BackColor = System.Drawing.Color.Silver;
+            this.bt_cancer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_cancer.Location = new System.Drawing.Point(355, 361);
             this.bt_cancer.Name = "bt_cancer";
-            this.bt_cancer.Size = new System.Drawing.Size(153, 34);
+            this.bt_cancer.Size = new System.Drawing.Size(170, 41);
             this.bt_cancer.TabIndex = 42;
             this.bt_cancer.Text = "Cancer";
-            this.bt_cancer.UseVisualStyleBackColor = true;
+            this.bt_cancer.UseVisualStyleBackColor = false;
             this.bt_cancer.Click += new System.EventHandler(this.bt_cancer_Click);
+            // 
+            // button_static
+            // 
+            this.button_static.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.button_static.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_static.Location = new System.Drawing.Point(355, 410);
+            this.button_static.Name = "button_static";
+            this.button_static.Size = new System.Drawing.Size(518, 46);
+            this.button_static.TabIndex = 43;
+            this.button_static.Text = "Static Score";
+            this.button_static.UseVisualStyleBackColor = false;
+            this.button_static.Click += new System.EventHandler(this.button_static_Click);
+            // 
+            // button_printer
+            // 
+            this.button_printer.BackColor = System.Drawing.Color.YellowGreen;
+            this.button_printer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_printer.Location = new System.Drawing.Point(564, 361);
+            this.button_printer.Name = "button_printer";
+            this.button_printer.Size = new System.Drawing.Size(118, 41);
+            this.button_printer.TabIndex = 44;
+            this.button_printer.Text = "Print";
+            this.button_printer.UseVisualStyleBackColor = false;
+            this.button_printer.Click += new System.EventHandler(this.button_printer_Click);
             // 
             // ResultByAvgScore
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.IndianRed;
-            this.ClientSize = new System.Drawing.Size(1125, 433);
+            this.ClientSize = new System.Drawing.Size(1125, 474);
+            this.Controls.Add(this.button_printer);
+            this.Controls.Add(this.button_static);
             this.Controls.Add(this.bt_cancer);
             this.Controls.Add(this.button_print);
             this.Controls.Add(this.tb_id_fname);
@@ -190,6 +223,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "ResultByAvgScore";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ResultByAvgScore 19110434_phanVinhPhuc";
             this.Load += new System.EventHandler(this.ResultByAvgScore_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Result)).EndInit();
@@ -212,5 +246,7 @@
         private System.Windows.Forms.TextBox tb_id_fname;
         private System.Windows.Forms.Button button_print;
         private System.Windows.Forms.Button bt_cancer;
+        private System.Windows.Forms.Button button_static;
+        private System.Windows.Forms.Button button_printer;
     }
 }

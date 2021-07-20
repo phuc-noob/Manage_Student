@@ -85,7 +85,7 @@
             // textId
             // 
             this.textId.Location = new System.Drawing.Point(173, 15);
-            this.textId.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textId.Margin = new System.Windows.Forms.Padding(4);
             this.textId.Name = "textId";
             this.textId.Size = new System.Drawing.Size(247, 28);
             this.textId.TabIndex = 3;
@@ -94,7 +94,7 @@
             // textFname
             // 
             this.textFname.Location = new System.Drawing.Point(173, 63);
-            this.textFname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textFname.Margin = new System.Windows.Forms.Padding(4);
             this.textFname.Name = "textFname";
             this.textFname.Size = new System.Drawing.Size(247, 28);
             this.textFname.TabIndex = 4;
@@ -102,7 +102,7 @@
             // textLname
             // 
             this.textLname.Location = new System.Drawing.Point(175, 112);
-            this.textLname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textLname.Margin = new System.Windows.Forms.Padding(4);
             this.textLname.Name = "textLname";
             this.textLname.Size = new System.Drawing.Size(247, 28);
             this.textLname.TabIndex = 5;
@@ -122,7 +122,7 @@
             this.dateTimePicker1.CalendarMonthBackground = System.Drawing.Color.Yellow;
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.Location = new System.Drawing.Point(173, 164);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dateTimePicker1.Size = new System.Drawing.Size(247, 28);
@@ -134,7 +134,7 @@
             this.rbMale.AutoSize = true;
             this.rbMale.Checked = true;
             this.rbMale.Location = new System.Drawing.Point(173, 217);
-            this.rbMale.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbMale.Margin = new System.Windows.Forms.Padding(4);
             this.rbMale.Name = "rbMale";
             this.rbMale.Size = new System.Drawing.Size(76, 28);
             this.rbMale.TabIndex = 8;
@@ -146,7 +146,7 @@
             // 
             this.rbFemale.AutoSize = true;
             this.rbFemale.Location = new System.Drawing.Point(289, 217);
-            this.rbFemale.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbFemale.Margin = new System.Windows.Forms.Padding(4);
             this.rbFemale.Name = "rbFemale";
             this.rbFemale.Size = new System.Drawing.Size(101, 28);
             this.rbFemale.TabIndex = 9;
@@ -187,7 +187,7 @@
             // textPhone
             // 
             this.textPhone.Location = new System.Drawing.Point(175, 262);
-            this.textPhone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textPhone.Margin = new System.Windows.Forms.Padding(4);
             this.textPhone.Name = "textPhone";
             this.textPhone.Size = new System.Drawing.Size(247, 28);
             this.textPhone.TabIndex = 13;
@@ -195,7 +195,7 @@
             // textAddress
             // 
             this.textAddress.Location = new System.Drawing.Point(175, 313);
-            this.textAddress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textAddress.Margin = new System.Windows.Forms.Padding(4);
             this.textAddress.Multiline = true;
             this.textAddress.Name = "textAddress";
             this.textAddress.Size = new System.Drawing.Size(247, 90);
@@ -216,7 +216,7 @@
             this.pictureBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.pictureBox1.BackColor = System.Drawing.Color.Orchid;
             this.pictureBox1.Location = new System.Drawing.Point(172, 417);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(246, 150);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -227,7 +227,7 @@
             // 
             this.bt_upload_image.ForeColor = System.Drawing.SystemColors.ControlText;
             this.bt_upload_image.Location = new System.Drawing.Point(170, 575);
-            this.bt_upload_image.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bt_upload_image.Margin = new System.Windows.Forms.Padding(4);
             this.bt_upload_image.Name = "bt_upload_image";
             this.bt_upload_image.Size = new System.Drawing.Size(248, 39);
             this.bt_upload_image.TabIndex = 17;
@@ -240,7 +240,7 @@
             this.bt_cancer.BackColor = System.Drawing.Color.Brown;
             this.bt_cancer.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.bt_cancer.Location = new System.Drawing.Point(60, 636);
-            this.bt_cancer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bt_cancer.Margin = new System.Windows.Forms.Padding(4);
             this.bt_cancer.Name = "bt_cancer";
             this.bt_cancer.Size = new System.Drawing.Size(126, 47);
             this.bt_cancer.TabIndex = 18;
@@ -252,7 +252,7 @@
             // 
             this.bt_Add_student.BackColor = System.Drawing.Color.RoyalBlue;
             this.bt_Add_student.Location = new System.Drawing.Point(266, 636);
-            this.bt_Add_student.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bt_Add_student.Margin = new System.Windows.Forms.Padding(4);
             this.bt_Add_student.Name = "bt_Add_student";
             this.bt_Add_student.Size = new System.Drawing.Size(154, 47);
             this.bt_Add_student.TabIndex = 19;
@@ -289,9 +289,10 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "infoStudent";
             this.Text = "infoStudent";
+            this.Load += new System.EventHandler(this.infoStudent_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

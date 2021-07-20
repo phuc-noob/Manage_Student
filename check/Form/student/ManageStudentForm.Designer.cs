@@ -53,7 +53,7 @@
             this.bt_reset = new System.Windows.Forms.Button();
             this.bt_edit = new System.Windows.Forms.Button();
             this.bt_total_student = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox_search = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.bt_Search = new System.Windows.Forms.Button();
             this.bt_download_image = new System.Windows.Forms.Button();
@@ -274,11 +274,11 @@
             // dt_gridview_mangeStudent
             // 
             this.dt_gridview_mangeStudent.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dt_gridview_mangeStudent.ColumnHeadersHeight = 29;
+            this.dt_gridview_mangeStudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dt_gridview_mangeStudent.GridColor = System.Drawing.SystemColors.ActiveBorder;
             this.dt_gridview_mangeStudent.Location = new System.Drawing.Point(367, 55);
             this.dt_gridview_mangeStudent.Name = "dt_gridview_mangeStudent";
-            this.dt_gridview_mangeStudent.RowHeadersWidth = 51;
+            this.dt_gridview_mangeStudent.RowHeadersWidth = 50;
             this.dt_gridview_mangeStudent.RowTemplate.Height = 80;
             this.dt_gridview_mangeStudent.Size = new System.Drawing.Size(746, 468);
             this.dt_gridview_mangeStudent.TabIndex = 40;
@@ -311,7 +311,7 @@
             // bt_total_student
             // 
             this.bt_total_student.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.bt_total_student.Location = new System.Drawing.Point(777, 538);
+            this.bt_total_student.Location = new System.Drawing.Point(886, 543);
             this.bt_total_student.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.bt_total_student.Name = "bt_total_student";
             this.bt_total_student.Size = new System.Drawing.Size(226, 38);
@@ -320,13 +320,13 @@
             this.bt_total_student.UseVisualStyleBackColor = false;
             this.bt_total_student.Click += new System.EventHandler(this.bt_total_student_Click);
             // 
-            // textBox1
+            // textBox_search
             // 
-            this.textBox1.Location = new System.Drawing.Point(682, 15);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(210, 22);
-            this.textBox1.TabIndex = 44;
+            this.textBox_search.Location = new System.Drawing.Point(682, 15);
+            this.textBox_search.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.textBox_search.Name = "textBox_search";
+            this.textBox_search.Size = new System.Drawing.Size(210, 22);
+            this.textBox_search.TabIndex = 44;
             // 
             // label9
             // 
@@ -384,7 +384,7 @@
             this.Controls.Add(this.bt_download_image);
             this.Controls.Add(this.bt_Search);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBox_search);
             this.Controls.Add(this.bt_total_student);
             this.Controls.Add(this.bt_edit);
             this.Controls.Add(this.bt_reset);
@@ -448,7 +448,7 @@
         private System.Windows.Forms.Button bt_reset;
         private System.Windows.Forms.Button bt_edit;
         private System.Windows.Forms.Button bt_total_student;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox_search;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button bt_Search;
         private System.Windows.Forms.Button bt_download_image;

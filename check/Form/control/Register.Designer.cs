@@ -39,9 +39,7 @@
             this.regis = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -49,7 +47,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(79, 92);
+            this.label1.Location = new System.Drawing.Point(98, 102);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 20);
             this.label1.TabIndex = 1;
@@ -60,7 +58,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(81, 139);
+            this.label2.Location = new System.Drawing.Point(100, 149);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(86, 20);
             this.label2.TabIndex = 2;
@@ -71,7 +69,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(25, 183);
+            this.label3.Location = new System.Drawing.Point(44, 193);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(142, 20);
             this.label3.TabIndex = 3;
@@ -81,7 +79,7 @@
             // 
             this.texUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.texUsername.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.texUsername.Location = new System.Drawing.Point(184, 90);
+            this.texUsername.Location = new System.Drawing.Point(203, 100);
             this.texUsername.Name = "texUsername";
             this.texUsername.Size = new System.Drawing.Size(217, 27);
             this.texUsername.TabIndex = 4;
@@ -90,7 +88,7 @@
             // 
             this.textPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textPassword.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.textPassword.Location = new System.Drawing.Point(184, 132);
+            this.textPassword.Location = new System.Drawing.Point(203, 142);
             this.textPassword.Name = "textPassword";
             this.textPassword.PasswordChar = '#';
             this.textPassword.Size = new System.Drawing.Size(217, 27);
@@ -100,7 +98,7 @@
             // 
             this.textConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textConfirm.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.textConfirm.Location = new System.Drawing.Point(184, 176);
+            this.textConfirm.Location = new System.Drawing.Point(203, 186);
             this.textConfirm.Name = "textConfirm";
             this.textConfirm.PasswordChar = '$';
             this.textConfirm.Size = new System.Drawing.Size(217, 27);
@@ -110,7 +108,7 @@
             // 
             this.signin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.signin.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.signin.Location = new System.Drawing.Point(127, 227);
+            this.signin.Location = new System.Drawing.Point(146, 237);
             this.signin.Name = "signin";
             this.signin.Size = new System.Drawing.Size(112, 32);
             this.signin.TabIndex = 7;
@@ -122,7 +120,7 @@
             // 
             this.regis.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.regis.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.regis.Location = new System.Drawing.Point(272, 227);
+            this.regis.Location = new System.Drawing.Point(291, 237);
             this.regis.Name = "regis";
             this.regis.Size = new System.Drawing.Size(114, 32);
             this.regis.TabIndex = 8;
@@ -141,9 +139,9 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.textPassword);
             this.panel1.Controls.Add(this.signin);
-            this.panel1.Location = new System.Drawing.Point(649, 388);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(438, 298);
+            this.panel1.Size = new System.Drawing.Size(497, 317);
             this.panel1.TabIndex = 9;
             // 
             // label4
@@ -151,36 +149,25 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label4.Location = new System.Drawing.Point(21, 20);
+            this.label4.Location = new System.Drawing.Point(40, 30);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(176, 46);
             this.label4.TabIndex = 9;
             this.label4.Text = "Register";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(599, 674);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
             // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1098, 721);
-            this.Controls.Add(this.pictureBox1);
+            this.ClientSize = new System.Drawing.Size(523, 340);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Register";
             this.Text = "Register";
-            this.Load += new System.EventHandler(this.Register_Load);
+            //this.Load += new System.EventHandler(this.Register_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -196,6 +183,5 @@
         private System.Windows.Forms.Button regis;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

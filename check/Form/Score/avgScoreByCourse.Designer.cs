@@ -48,7 +48,7 @@
             this.dataGridView_Score.Name = "dataGridView_Score";
             this.dataGridView_Score.RowHeadersWidth = 51;
             this.dataGridView_Score.RowTemplate.Height = 24;
-            this.dataGridView_Score.Size = new System.Drawing.Size(330, 264);
+            this.dataGridView_Score.Size = new System.Drawing.Size(454, 264);
             this.dataGridView_Score.TabIndex = 0;
             // 
             // chart1
@@ -71,7 +71,7 @@
             series1.Legend = "Legend1";
             series1.Name = "Avg Score";
             this.chart_avg.Series.Add(series1);
-            this.chart_avg.Size = new System.Drawing.Size(330, 374);
+            this.chart_avg.Size = new System.Drawing.Size(454, 416);
             this.chart_avg.TabIndex = 1;
             this.chart_avg.Text = "chart2";
             this.chart_avg.Click += new System.EventHandler(this.chart_avg_Click);
@@ -80,7 +80,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(352, 704);
+            this.ClientSize = new System.Drawing.Size(478, 704);
             this.Controls.Add(this.chart_avg);
             this.Controls.Add(this.dataGridView_Score);
             this.Name = "avgScoreByCourse";

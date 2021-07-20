@@ -63,10 +63,10 @@ namespace check
             
         }
 
-        private void Register_Load(object sender, EventArgs e)
-        {
-            pictureBox1.Image = Image.FromFile("../../image/stduent.png");
-        }
+        //private void Register_Load(object sender, EventArgs e)
+        //{
+        //    pictureBox1.Image = Image.FromFile("../../image/stduent.png");
+        //}
 
         private void button1_Click(object sender, EventArgs e)
         {

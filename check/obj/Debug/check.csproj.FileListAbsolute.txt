@@ -47,3 +47,14 @@ D:\WinformProject\check\check\obj\Debug\check.ManageScore.resources
 D:\WinformProject\check\check\obj\Debug\check.PrintScore.resources
 D:\WinformProject\check\check\obj\Debug\check.ResultByAvgScore.resources
 D:\WinformProject\check\check\obj\Debug\check.StaticResult.resources
+D:\WinformProject\check\check\obj\Debug\check.registerUser.resources
+D:\WinformProject\check\check\obj\Debug\check.infoHumanResource.resources
+D:\WinformProject\check\check\obj\Debug\check.editInfoUser.resources
+D:\WinformProject\check\check\obj\Debug\check.AddContact.resources
+D:\WinformProject\check\check\obj\Debug\check.EditContact.resources
+D:\WinformProject\check\check\obj\Debug\check.selectContact.resources
+D:\WinformProject\check\check\obj\Debug\check.ListContact.resources
+D:\WinformProject\check\check\obj\Debug\check.AddCourseEX.resources
+D:\WinformProject\check\check\obj\Debug\check.CourseStuList.resources
+D:\WinformProject\check\check\obj\Debug\check.StaticStudentScore.resources
+D:\WinformProject\check\check\obj\Debug\check.ListCourseStudent.resources

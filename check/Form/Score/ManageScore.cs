@@ -40,6 +40,13 @@ namespace check
             dataGridView_manage.AutoResizeColumnHeadersHeight();
             dataGridView_manage.DataSource = dt;
             dataGridView_manage.ReadOnly = true;
+
+            dataGridView_manage.Columns[0].HeaderText = "Student ID";
+            dataGridView_manage.Columns[1].HeaderText = "First Name";
+            dataGridView_manage.Columns[2].HeaderText = "Last Name";
+            dataGridView_manage.Columns[3].HeaderText = "Course ID";
+            dataGridView_manage.Columns[4].HeaderText = "Label";
+            dataGridView_manage.Columns[5].HeaderText = "Student Score";
             // image size
 
             //dataGridView_manage.RowTemplate.MinimumHeight = 80;
@@ -79,7 +86,7 @@ namespace check
             dataGridView_manage.AutoResizeColumnHeadersHeight();
             dataGridView_manage.DataSource = dt;
             dataGridView_manage.ReadOnly = true;
-            
+            dataGridView_manage.Columns[3].HeaderText = "Birth Date";
             dataGridView_manage.Columns[3].DefaultCellStyle.Format = "MM/dd/yyyy";
         }
 
@@ -144,17 +151,20 @@ namespace check
 
         private void button_Remove_Click(object sender, EventArgs e)
         {
-            RemoveScore rScore = new RemoveScore();
-            int id =int.Parse( dataGridView_manage.CurrentRow.Cells[0].Value.ToString() );
-            int cid = int.Parse(dataGridView_manage.CurrentRow.Cells[3].Value.ToString());
-            if (score.deleteScoreById(id,cid))
+            if (MessageBox.Show("Are yousure you want to delete this Course", "Remve Course", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                MessageBox.Show("Score deleted", "Delete Score", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.ManageScore_Load(sender, e);
-            }
-            else
-            {
-                MessageBox.Show("Score not deleted", "Delete Score", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                RemoveScore rScore = new RemoveScore();
+                int id = int.Parse(dataGridView_manage.CurrentRow.Cells[0].Value.ToString());
+                int cid = int.Parse(cb_course.SelectedValue.ToString());
+                if (score.deleteScoreById(id, cid))
+                {
+                    MessageBox.Show("Score deleted", "Delete Score", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.ManageScore_Load(sender, e);
+                }
+                else
+                {
+                    MessageBox.Show("Score not deleted", "Delete Score", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
 

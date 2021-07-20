@@ -32,6 +32,16 @@ namespace check
             }
             
         }
+        public DataTable getScoreByStuId(int sid)
+        {
+            DataTable dt = new DataTable();
+            SqlCommand cmd = new SqlCommand("select * from Score where student_id = @StdId ", db.getConnection);
+            cmd.Parameters.Add("@StdId", SqlDbType.Int).Value = sid;
+            SqlDataAdapter adt = new SqlDataAdapter(cmd);
+
+            adt.Fill(dt);
+            return dt;
+        }
         public bool is_existScore(int std_id, int cour_id)
         {
             SqlCommand cmd = new SqlCommand("select * from Score where student_id = @StdId and course_id =@cId", db.getConnection);

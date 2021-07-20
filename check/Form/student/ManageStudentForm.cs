@@ -20,19 +20,52 @@ namespace check
             InitializeComponent();
         }
         private Student student = new Student();
-
+        SqlCommand command;
+        MY_DB db = new MY_DB();
+        Course course = new Course();
         private void ManageStudentForm_Load(object sender, EventArgs e)
         {
-            MY_DB db = new MY_DB();
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Std", db.getConnection);
+            command = new SqlCommand("SELECT * FROM Std", db.getConnection);
+            fillGrid(command);
+            
+        }
+        public void fillGrid(SqlCommand cmd)
+        {
             db.OpenConnection();
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             sda.Fill(dt);
             db.closeConnection();
             dt_gridview_mangeStudent.AutoResizeColumnHeadersHeight();
+
+            // add new column select course
+            dt.Columns.Add("Selected Course", typeof(System.String));
+            for(int i=0;i < dt.Rows.Count; i++)
+            {
+                string str ="";
+                DataTable stdCour = course.getStuCourseBySId(int.Parse(dt.Rows[i]["id"].ToString()));
+                for(int j=0;j <stdCour.Rows.Count;j++)
+                {
+                    str += string.Format("{0} ,\n", stdCour.Rows[j]["label"].ToString());
+                }
+                dt.Rows[i]["Selected Course"] = str;
+            }
+            // ----------------------------
+
+            bt_total_student.Text = string.Format("Total Student :{0} ",dt.Rows.Count);
+            
             dt_gridview_mangeStudent.DataSource = dt;
             dt_gridview_mangeStudent.ReadOnly = true;
+
+            dt_gridview_mangeStudent.Columns[0].HeaderText = "Student ID";
+            dt_gridview_mangeStudent.Columns[1].HeaderText = "First Name";
+            dt_gridview_mangeStudent.Columns[2].HeaderText = "Last Name";
+            dt_gridview_mangeStudent.Columns[3].HeaderText = "Birth Date";
+            dt_gridview_mangeStudent.Columns[4].HeaderText = "Gender";
+            dt_gridview_mangeStudent.Columns[5].HeaderText = "Phone";
+            dt_gridview_mangeStudent.Columns[6].HeaderText = "Address";
+            dt_gridview_mangeStudent.Columns[7].HeaderText = "Picture";
+
             // image size
 
             DataGridViewImageColumn picCol = new DataGridViewImageColumn();
@@ -75,6 +108,7 @@ namespace check
             dt_picker_student.Value = DateTime.Now;
             pic_box_Std.Image = null;
 
+            this.ManageStudentForm_Load(sender,e);
         }
 
         private void bt_Add_Click(object sender, EventArgs e)
@@ -121,6 +155,7 @@ namespace check
             {
                 MessageBox.Show(ex.Message,"Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
+            this.ManageStudentForm_Load(sender, e);
         }
 
         private void bt_upload_Image_Click(object sender, EventArgs e)
@@ -175,6 +210,7 @@ namespace check
 
                 }
             }
+            this.ManageStudentForm_Load(sender, e);
         }
 
         private void dt_gridview_mangeStudent_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -205,32 +241,35 @@ namespace check
 
         private void bt_remove_Click(object sender, EventArgs e)
         {
-            Student std = new Student();
+            if (DialogResult.Yes == MessageBox.Show("Do You Want Delete ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
+            {
+                Student std = new Student();
 
-            try
-            {
-                bool del = std.deleteStudent(int.Parse(textId.Text));
-                if (del)
+                try
                 {
-                    textId.Text = "";
-                    textFname.Text = "";
-                    textLname.Text = "";
-                    textPhone.Text = "";
-                    textAddress.Text = "";
-                    dt_picker_student.Value = DateTime.Now;
-                    pic_box_Std.Image = null;
-                    MessageBox.Show("Student Deleted", "Delete Student", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    //this.bt_total_student(sender, e);   
-                    this.button3_Click(sender, e);
+                    bool del = std.deleteStudent(int.Parse(textId.Text));
+                    if (del)
+                    {
+                        textId.Text = "";
+                        textFname.Text = "";
+                        textLname.Text = "";
+                        textPhone.Text = "";
+                        textAddress.Text = "";
+                        dt_picker_student.Value = DateTime.Now;
+                        pic_box_Std.Image = null;
+                        MessageBox.Show("Student Deleted", "Delete Student", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //this.bt_total_student(sender, e);   
+                        this.button3_Click(sender, e);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error To Delete Student ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Error To Delete Student ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -289,33 +328,34 @@ namespace check
 
         private void bt_Search_Click(object sender, EventArgs e)
         {
-
+            command = new SqlCommand("select * from Std Where CONCAT(fname,lname,address) LIKE'%" + textBox_search.Text + "%'",db.getConnection);
+            fillGrid(command);
         }
 
         private void bt_total_student_Click(object sender, EventArgs e)
         {
-            MY_DB db = new MY_DB();
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Std", db.getConnection);
-            db.OpenConnection();
-            SqlDataAdapter sda = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            sda.Fill(dt);
-            db.closeConnection();
-            dt_gridview_mangeStudent.AutoResizeColumnHeadersHeight();
-            dt_gridview_mangeStudent.DataSource = dt;
-            dt_gridview_mangeStudent.ReadOnly = true;
-            // image size
+            //MY_DB db = new MY_DB();
+            //SqlCommand cmd = new SqlCommand("SELECT * FROM Std", db.getConnection);
+            //db.OpenConnection();
+            //SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            //DataTable dt = new DataTable();
+            //sda.Fill(dt);
+            //db.closeConnection();
+            //dt_gridview_mangeStudent.AutoResizeColumnHeadersHeight();
+            //dt_gridview_mangeStudent.DataSource = dt;
+            //dt_gridview_mangeStudent.ReadOnly = true;
+            //// image size
 
-            DataGridViewImageColumn picCol = new DataGridViewImageColumn();
-            //dt_gridview_mangeStudent.RowTemplate.MinimumHeight = 80;
-            dt_gridview_mangeStudent.DataSource = dt;
-            picCol = (DataGridViewImageColumn)dt_gridview_mangeStudent.Columns[7];
-            picCol.ImageLayout = DataGridViewImageCellLayout.Stretch;
-            dt_gridview_mangeStudent.AllowUserToAddRows = false;
+            //DataGridViewImageColumn picCol = new DataGridViewImageColumn();
+            ////dt_gridview_mangeStudent.RowTemplate.MinimumHeight = 80;
+            //dt_gridview_mangeStudent.DataSource = dt;
+            //picCol = (DataGridViewImageColumn)dt_gridview_mangeStudent.Columns[7];
+            //picCol.ImageLayout = DataGridViewImageCellLayout.Stretch;
+            //dt_gridview_mangeStudent.AllowUserToAddRows = false;
 
-            int totalStd = student.getTotalStd();
-            string totalText = string.Format("Total Student : {0}", totalStd);
-            bt_total_student.Text = totalText;
+            //int totalStd = student.getTotalStd();
+            //string totalText = string.Format("Total Student : {0}", totalStd);
+            //bt_total_student.Text = totalText;
         }
 
         private void bt_download_image_Click(object sender, EventArgs e)

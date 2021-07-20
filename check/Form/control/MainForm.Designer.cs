@@ -49,7 +49,6 @@
             this.toolTripMangeScore = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTrip_avgScore = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTrip_print = new System.Windows.Forms.ToolStripMenuItem();
-            this.rESULTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rESULTToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTrip_avgResult = new System.Windows.Forms.ToolStripMenuItem();
             this.sTATICRESULTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -143,7 +142,7 @@
             // 
             // toolTrip_AddCourse
             // 
-            this.toolTrip_AddCourse.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.toolTrip_AddCourse.BackColor = System.Drawing.SystemColors.Highlight;
             this.toolTrip_AddCourse.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolTrip_AddCourse.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.toolTrip_AddCourse.Name = "toolTrip_AddCourse";
@@ -153,7 +152,7 @@
             // 
             // toolTrip_removeCourse
             // 
-            this.toolTrip_removeCourse.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.toolTrip_removeCourse.BackColor = System.Drawing.SystemColors.Highlight;
             this.toolTrip_removeCourse.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolTrip_removeCourse.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.toolTrip_removeCourse.Name = "toolTrip_removeCourse";
@@ -163,7 +162,7 @@
             // 
             // toolTripEdit
             // 
-            this.toolTripEdit.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.toolTripEdit.BackColor = System.Drawing.Color.RoyalBlue;
             this.toolTripEdit.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolTripEdit.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.toolTripEdit.Name = "toolTripEdit";
@@ -173,7 +172,7 @@
             // 
             // toolTripManageCourse
             // 
-            this.toolTripManageCourse.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.toolTripManageCourse.BackColor = System.Drawing.SystemColors.Highlight;
             this.toolTripManageCourse.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolTripManageCourse.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.toolTripManageCourse.Name = "toolTripManageCourse";
@@ -183,7 +182,7 @@
             // 
             // toolTripPrintCourse
             // 
-            this.toolTripPrintCourse.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.toolTripPrintCourse.BackColor = System.Drawing.SystemColors.Highlight;
             this.toolTripPrintCourse.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolTripPrintCourse.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.toolTripPrintCourse.Name = "toolTripPrintCourse";
@@ -199,8 +198,7 @@
             this.toolTrip_RemoveScore,
             this.toolTripMangeScore,
             this.toolTrip_avgScore,
-            this.toolTrip_print,
-            this.rESULTToolStripMenuItem});
+            this.toolTrip_print});
             this.sCOREToolStripMenuItem.Name = "sCOREToolStripMenuItem";
             this.sCOREToolStripMenuItem.Size = new System.Drawing.Size(68, 24);
             this.sCOREToolStripMenuItem.Text = "SCORE";
@@ -255,15 +253,6 @@
             this.toolTrip_print.Text = "PRINT";
             this.toolTrip_print.Click += new System.EventHandler(this.toolTrip_print_Click);
             // 
-            // rESULTToolStripMenuItem
-            // 
-            this.rESULTToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.rESULTToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rESULTToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.rESULTToolStripMenuItem.Name = "rESULTToolStripMenuItem";
-            this.rESULTToolStripMenuItem.Size = new System.Drawing.Size(297, 30);
-            this.rESULTToolStripMenuItem.Text = "RESULT";
-            // 
             // rESULTToolStripMenuItem1
             // 
             this.rESULTToolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
@@ -292,10 +281,10 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::check.Properties.Resources.mylove__2_;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 31);
+            this.pictureBox1.Image = global::check.Properties.Resources.content;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 42);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(713, 420);
+            this.pictureBox1.Size = new System.Drawing.Size(701, 409);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -312,6 +301,8 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "PhanVinhPhuc_19110434_MainForm";
             this.Text = "19110434_PhanVinhPhuc_MainForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PhanVinhPhuc_19110434_MainForm_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.PhanVinhPhuc_19110434_MainForm_FormClosed);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -342,10 +333,9 @@
         private System.Windows.Forms.ToolStripMenuItem toolTripMangeScore;
         private System.Windows.Forms.ToolStripMenuItem toolTrip_avgScore;
         private System.Windows.Forms.ToolStripMenuItem toolTrip_print;
-        private System.Windows.Forms.ToolStripMenuItem rESULTToolStripMenuItem;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolStripMenuItem rESULTToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toolTrip_avgResult;
         private System.Windows.Forms.ToolStripMenuItem sTATICRESULTToolStripMenuItem;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

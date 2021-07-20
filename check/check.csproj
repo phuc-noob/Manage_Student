@@ -89,6 +89,40 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form\Course\AddCourseEX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Course\AddCourseEX.Designer.cs">
+      <DependentUpon>AddCourseEX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Class\Contact.cs" />
+    <Compile Include="DataSet1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Form\Course\CourseStuList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Course\CourseStuList.Designer.cs">
+      <DependentUpon>CourseStuList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\HumanResource\EditContact.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\HumanResource\EditContact.Designer.cs">
+      <DependentUpon>EditContact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\HumanResource\AddContact.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\HumanResource\AddContact.Designer.cs">
+      <DependentUpon>AddContact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\HumanResource\editInfoUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\HumanResource\editInfoUser.Designer.cs">
+      <DependentUpon>editInfoUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\Score\avgScoreByCourse.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -176,6 +210,26 @@
     <Compile Include="Form\Score\PrintScore.Designer.cs">
       <DependentUpon>PrintScore.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form\HumanResource\Main_HumanResource.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\HumanResource\Main_HumanResource.Designer.cs">
+      <DependentUpon>Main_HumanResource.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Class\Global.cs" />
+    <Compile Include="Form\HumanResource\ListContact.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\HumanResource\ListContact.Designer.cs">
+      <DependentUpon>ListContact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Class\group.cs" />
+    <Compile Include="Form\HumanResource\ListCourseStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\HumanResource\ListCourseStudent.Designer.cs">
+      <DependentUpon>ListCourseStudent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -226,6 +280,43 @@
     <Compile Include="Form\Score\StaticResult.Designer.cs">
       <DependentUpon>StaticResult.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form\control\registerUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\control\registerUser.Designer.cs">
+      <DependentUpon>registerUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Class\user.cs" />
+    <Compile Include="Form\HumanResource\selectContact.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\HumanResource\selectContact.Designer.cs">
+      <DependentUpon>selectContact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Course\StaticStudentScore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Course\StaticStudentScore.Designer.cs">
+      <DependentUpon>StaticStudentScore.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form\Course\AddCourseEX.resx">
+      <DependentUpon>AddCourseEX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Course\CourseStuList.resx">
+      <DependentUpon>CourseStuList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\HumanResource\EditContact.resx">
+      <DependentUpon>EditContact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\HumanResource\AddContact.resx">
+      <DependentUpon>AddContact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\HumanResource\editInfoUser.resx">
+      <DependentUpon>editInfoUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\HumanResource\ListCourseStudent.resx">
+      <DependentUpon>ListCourseStudent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\Score\avgScoreByCourse.resx">
       <DependentUpon>avgScoreByCourse.cs</DependentUpon>
     </EmbeddedResource>
@@ -268,6 +359,12 @@
     <EmbeddedResource Include="Form\Course\manageCourse.resx">
       <DependentUpon>manageCourse.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\HumanResource\Main_HumanResource.resx">
+      <DependentUpon>Main_HumanResource.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\HumanResource\ListContact.resx">
+      <DependentUpon>ListContact.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -294,6 +391,15 @@
     <EmbeddedResource Include="Form\Score\StaticResult.resx">
       <DependentUpon>StaticResult.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\control\registerUser.resx">
+      <DependentUpon>registerUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\HumanResource\selectContact.resx">
+      <DependentUpon>selectContact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Course\StaticStudentScore.resx">
+      <DependentUpon>StaticStudentScore.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -319,6 +425,8 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="image\download.jpg" />
+    <None Include="image\content.jpg" />
     <Content Include="image\stduent.png" />
     <Content Include="image\student.png" />
     <None Include="Resources\loveSoMuch.jpg" />

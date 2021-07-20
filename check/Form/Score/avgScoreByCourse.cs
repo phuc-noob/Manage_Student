@@ -19,17 +19,36 @@ namespace check
         Score score = new Score();
         private void avgScoreByCourse_19110434_PhanVinhPhuc_Load(object sender, EventArgs e)
         {
-            DataTable dt = score.getAvgScoreByCourse();
+            DataTable dt = new DataTable();
+            dt = score.getAvgScoreByCourse();
             dataGridView_Score.AutoResizeColumnHeadersHeight();
+            
+            
+            
 
             dataGridView_Score.DataSource = dt;
+            dataGridView_Score.Columns[1].CellTemplate.Style.Format = string.Format("00:00.00");
             dataGridView_Score.ReadOnly = true;
             dataGridView_Score.AutoResizeRows();
 
-            chart_avg.Series["Avg Score"].Points.AddXY("Data", 10);
-            chart_avg.Series["Avg Score"].Points.AddXY("Winform", 5);
-            chart_avg.Series["Avg Score"].Points.AddXY("Database", 8);
-            chart_avg.Series["Avg Score"].Points.AddXY("AI", 10);
+            dataGridView_Score.Columns[0].Width = 170;
+            dataGridView_Score.Columns[1].Width = 120;
+            dataGridView_Score.Columns[0].HeaderText = "Label";
+            dataGridView_Score.Columns[1].HeaderText = "Average Score";
+
+            chart_avg.Titles.Add("Average Course Score");
+            for (int i =0;i < dt.Rows.Count; i++)
+            {
+                chart_avg.Series["Avg Score"].Points.AddXY(dt.Rows[i]["label"].ToString(), dt.Rows[i]["AverageGrade"].ToString());
+            }
+
+            for(int i=0;i < dt.Rows.Count; i++)
+            {
+                if(dt.Rows[i][1].ToString().Length >4)
+                {
+                    dt.Rows[i][1] = Math.Round(double.Parse(dt.Rows[i][1].ToString()), 2);
+                }
+            }
         }
 
         private void chart_avg_Click(object sender, EventArgs e)

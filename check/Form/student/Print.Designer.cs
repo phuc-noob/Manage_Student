@@ -58,10 +58,12 @@
             this.panel1.Controls.Add(this.rbMaleStd);
             this.panel1.Controls.Add(this.rbFemaleStd);
             this.panel1.Controls.Add(this.rb_AllStd);
+            this.panel1.ForeColor = System.Drawing.Color.Blue;
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1144, 122);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // bt_check_Print
             // 
@@ -77,6 +79,7 @@
             // 
             // panel2
             // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.dt_picker_Max);
             this.panel2.Controls.Add(this.dtPicker_min);

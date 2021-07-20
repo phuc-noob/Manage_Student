@@ -35,23 +35,31 @@ namespace check
             
             //dataGridView_Score.RowTemplate.MinimumHeight = 80;
             dataGridView_Score.DataSource = dt;
+            dataGridView_Score.Columns[0].HeaderText = "Student ID";
+            dataGridView_Score.Columns[1].HeaderText = "First Name";
+            dataGridView_Score.Columns[2].HeaderText = "Last Name";
+            dataGridView_Score.Columns[3].HeaderText = "Course ID";
+            dataGridView_Score.Columns[4].HeaderText = "Label";
+            dataGridView_Score.Columns[5].HeaderText = "Student Score";
         }
 
         private void button_Remove_Click(object sender, EventArgs e)
         {
-            RemoveScore rScore = new RemoveScore();
-            int id =int.Parse( dataGridView_Score.CurrentRow.Cells[0].Value.ToString() );
-            int cid = int.Parse(dataGridView_Score.CurrentRow.Cells[3].Value.ToString());
-            if (score.deleteScoreById(id,cid))
+            if (MessageBox.Show("Are yousure you want to delete this Course", "Remve Course", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                MessageBox.Show("Score deleted", "Delete Score", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                RemoveScore_Load(sender, e);
+                RemoveScore rScore = new RemoveScore();
+                int id = int.Parse(dataGridView_Score.CurrentRow.Cells[0].Value.ToString());
+                int cid = int.Parse(dataGridView_Score.CurrentRow.Cells[3].Value.ToString());
+                if (score.deleteScoreById(id, cid))
+                {
+                    MessageBox.Show("Score deleted", "Delete Score", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    RemoveScore_Load(sender, e);
+                }
+                else
+                {
+                    MessageBox.Show("Score not deleted", "Delete Score", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
-            else
-            {
-                MessageBox.Show("Score not deleted", "Delete Score", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            
         }
     }
 }

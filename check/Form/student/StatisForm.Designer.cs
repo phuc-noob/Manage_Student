@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StatisForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label_Total = new System.Windows.Forms.Label();
@@ -35,9 +38,11 @@
             this.label_totalMale = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label_Female = new System.Windows.Forms.Label();
+            this.chart_sexualStudent = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart_sexualStudent)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -99,11 +104,31 @@
             this.label_Female.Text = "label3";
             this.label_Female.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // chart_sexualStudent
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chart_sexualStudent.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart_sexualStudent.Legends.Add(legend1);
+            this.chart_sexualStudent.Location = new System.Drawing.Point(12, 280);
+            this.chart_sexualStudent.Name = "chart_sexualStudent";
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series1.Legend = "Legend1";
+            series1.Name = "student";
+            this.chart_sexualStudent.Series.Add(series1);
+            this.chart_sexualStudent.Size = new System.Drawing.Size(657, 391);
+            this.chart_sexualStudent.TabIndex = 3;
+            this.chart_sexualStudent.Text = "student";
+            this.chart_sexualStudent.Click += new System.EventHandler(this.chart_sexualStudent_Click);
+            // 
             // StatisForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(684, 283);
+            this.ClientSize = new System.Drawing.Size(685, 683);
+            this.Controls.Add(this.chart_sexualStudent);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -114,6 +139,7 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chart_sexualStudent)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -126,5 +152,6 @@
         private System.Windows.Forms.Label label_Total;
         private System.Windows.Forms.Label label_totalMale;
         private System.Windows.Forms.Label label_Female;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart_sexualStudent;
     }
 }

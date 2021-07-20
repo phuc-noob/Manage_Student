@@ -90,29 +90,35 @@ namespace check
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Student std = new Student();
-            
-            try
+            //MessageBox.Show("Do you want to delete", "DELETE",MessageBoxButtons.OK,MessageBoxIcon.Question);
+            if (DialogResult.Yes == MessageBox.Show("Do You Want Delete ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
             {
-                bool del = std.deleteStudent(int.Parse(textId.Text));
-                if (del)
+                Student std = new Student();
+
+                try
                 {
-                    text_Id.Text = "";
-                    textFname.Text = "";
-                    textLname.Text = "";
-                    textPhone.Text = "";
-                    textAddress.Text = "";
-                    dateTimePicker_Student.Value = DateTime.Now;
-                    pic_box_infoStudent.Image = null;
-                    MessageBox.Show("Student Deleted", "Delete Student", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    bool del = std.deleteStudent(int.Parse(textId.Text));
+                    if (del)
+                    {
+                        text_Id.Text = "";
+                        textFname.Text = "";
+                        textLname.Text = "";
+                        textPhone.Text = "";
+                        textAddress.Text = "";
+                        dateTimePicker_Student.Value = DateTime.Now;
+                        pic_box_infoStudent.Image = null;
+                        MessageBox.Show("Student Deleted", "Delete Student", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error To Delete Student ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Error To Delete Student ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            }catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
 
@@ -220,6 +226,13 @@ namespace check
         private void findStudent_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button_AddCourse_Click(object sender, EventArgs e)
+        {
+            AddCourseEX addCourseEx = new AddCourseEX();
+            addCourseEx.tbStuID().Text = text_Id.Text;
+            addCourseEx.Show();
         }
     }
 }

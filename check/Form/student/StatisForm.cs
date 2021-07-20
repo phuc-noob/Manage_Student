@@ -12,6 +12,7 @@ namespace check
 {
     public partial class StatisForm : Form
     {
+        double percentMale;
         public StatisForm()
         {
             InitializeComponent();
@@ -21,11 +22,11 @@ namespace check
             int totalMale = std.getTotalMale();
             int totalFMale = std.getTotalFemale();
 
-            double percentMale = ((totalMale*1.0) / (totalStd*1.0)) * 100;
+            percentMale = ((totalMale*1.0) / (totalStd*1.0)) * 100;
 
             string sTotal = string.Format("Total :{0:00}", totalStd);
-            string sPercentMale = string.Format("Male :{0:00} %",percentMale );
-            string sPercentFemale = string.Format("Female :{0:00} %", 100-percentMale);
+            string sPercentMale = string.Format("Male :{0:00.00} %",percentMale );
+            string sPercentFemale = string.Format("Female :{0:00.00} %", 100-percentMale);
             label_Total.Text = sTotal;
             label_Female.Text = sPercentFemale;
             label_totalMale.Text = sPercentMale;
@@ -43,6 +44,13 @@ namespace check
         }
 
         private void StatisForm_Load(object sender, EventArgs e)
+        {
+            chart_sexualStudent.Titles.Add("Percent Male/Female Student");
+            chart_sexualStudent.Series["student"].Points.AddXY("Male", percentMale);
+            chart_sexualStudent.Series["student"].Points.AddXY("Female",100-percentMale );
+        }
+
+        private void chart_sexualStudent_Click(object sender, EventArgs e)
         {
 
         }

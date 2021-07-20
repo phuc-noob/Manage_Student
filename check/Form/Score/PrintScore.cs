@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,6 +36,14 @@ namespace check
 
             //dataGridView_Print.RowTemplate.MinimumHeight = 80;
             dataGridView_Print.DataSource = dt;
+            dataGridView_Print.DataSource = dt;
+            dataGridView_Print.Columns[0].HeaderText = "Student ID";
+            dataGridView_Print.Columns[1].HeaderText = "First Name";
+            dataGridView_Print.Columns[2].HeaderText = "Last Name";
+            dataGridView_Print.Columns[3].HeaderText = "Course ID";
+            dataGridView_Print.Columns[4].HeaderText = "Label";
+            dataGridView_Print.Columns[5].HeaderText = "Student Score";
+
         }
 
         private void button_File_Click(object sender, EventArgs e)
@@ -47,14 +56,18 @@ namespace check
                 Spire.Doc.Document doc = new Spire.Doc.Document();
 
                 Spire.Doc.Documents.Paragraph paragraph1 = doc.AddSection().AddParagraph();
-                Spire.Doc.Fields.TextRange text1 = paragraph1.AppendText("DANH SACH KHÓA HỌC\n");
-                Spire.Doc.Fields.TextRange text2 = paragraph1.AppendText("HK II Nam 2020-2021\n");
+                Spire.Doc.Fields.TextRange text0 = paragraph1.AppendText("TRƯỜNG ĐẠI HỌC SƯ PHẠM KỸ THUẬT TP.HỒ CHÍ MINH\n\n");
+                Spire.Doc.Fields.TextRange text1 = paragraph1.AppendText("\t\t\t\t\tDANH SACH ĐIỂM MÔN HỌC\n");
+                Spire.Doc.Fields.TextRange text2 = paragraph1.AppendText("\t\t\t\t\t\t HK II Nam 2020-2021\n");
+                text0.CharacterFormat.FontName = "Times New Roman";
                 text1.CharacterFormat.FontName = "Times New Roman";
                 text2.CharacterFormat.FontName = "Times New Roman";
-                text1.CharacterFormat.FontSize = 24;
+
+                text0.CharacterFormat.FontSize = 10;
+                text1.CharacterFormat.FontSize = 15;
                 text2.CharacterFormat.FontSize = 13;
                 //paragraph1.Format.TextAlignment = TextAlignment.Center;              // văn bản canh giữa 
-                paragraph1.Format.HorizontalAlignment = Spire.Doc.Documents.HorizontalAlignment.Center;  // đoạn canh giữa
+                paragraph1.Format.HorizontalAlignment = Spire.Doc.Documents.HorizontalAlignment.Left;  // đoạn canh giữa
 
                 Spire.Doc.Table table = doc.Sections[0].AddTable(true);
 
@@ -102,6 +115,20 @@ namespace check
                 doc.Close();
 
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            PrintDialog pdialog = new PrintDialog();
+            PrintDocument pDoc = new PrintDocument();
+
+            pDoc.DocumentName = "Print Document";           // file name
+            pdialog.Document = pDoc;
+            pdialog.AllowSelection = true;                  // option of select selection
+            pdialog.AllowSomePages = true;                  // option of select multi pages
+
+            if (pdialog.ShowDialog() == DialogResult.OK)
+                pDoc.Print();
         }
     }
 }

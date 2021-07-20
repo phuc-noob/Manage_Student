@@ -128,5 +128,18 @@ namespace check
             StaticResult sResult = new StaticResult();
             sResult.Show();
         }
+
+        private void PhanVinhPhuc_19110434_MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            
+        }
+
+        private void PhanVinhPhuc_19110434_MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Hide();
+            fLogin login = new fLogin();
+            login.ShowDialog();
+            this.Close();
+        }
     }
 }

@@ -61,6 +61,10 @@ namespace check
 
             SqlCommand cmd = new SqlCommand("select id,fname,lname from Std");
             dtGridView_Std.DataSource = std.getStudent(cmd);
+            dtGridView_Std.Columns[0].HeaderText = "ID";
+            dtGridView_Std.Columns[1].HeaderText = "First Name";
+            dtGridView_Std.Columns[2].HeaderText = "Last Name";
+            dtGridView_Std.Columns[2].Width = 110;
         }
 
         private void dtGridView_Std_CellClick(object sender, DataGridViewCellEventArgs e)

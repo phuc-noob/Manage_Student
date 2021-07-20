@@ -51,6 +51,7 @@
             this.bt_Remove = new System.Windows.Forms.Button();
             this.bt_find_student = new System.Windows.Forms.Button();
             this.bt_update_image = new System.Windows.Forms.Button();
+            this.button_AddCourse = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pic_box_infoStudent)).BeginInit();
             this.SuspendLayout();
             // 
@@ -238,10 +239,10 @@
             // bt_edit
             // 
             this.bt_edit.BackColor = System.Drawing.Color.RoyalBlue;
-            this.bt_edit.Location = new System.Drawing.Point(504, 372);
+            this.bt_edit.Location = new System.Drawing.Point(407, 372);
             this.bt_edit.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.bt_edit.Name = "bt_edit";
-            this.bt_edit.Size = new System.Drawing.Size(154, 38);
+            this.bt_edit.Size = new System.Drawing.Size(154, 42);
             this.bt_edit.TabIndex = 37;
             this.bt_edit.Text = "Edit";
             this.bt_edit.UseVisualStyleBackColor = false;
@@ -251,10 +252,10 @@
             // 
             this.bt_Remove.BackColor = System.Drawing.Color.Brown;
             this.bt_Remove.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.bt_Remove.Location = new System.Drawing.Point(283, 372);
+            this.bt_Remove.Location = new System.Drawing.Point(168, 372);
             this.bt_Remove.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.bt_Remove.Name = "bt_Remove";
-            this.bt_Remove.Size = new System.Drawing.Size(139, 38);
+            this.bt_Remove.Size = new System.Drawing.Size(139, 42);
             this.bt_Remove.TabIndex = 36;
             this.bt_Remove.Text = "Remove";
             this.bt_Remove.UseVisualStyleBackColor = false;
@@ -274,13 +275,25 @@
             // 
             // bt_update_image
             // 
-            this.bt_update_image.Location = new System.Drawing.Point(668, 284);
+            this.bt_update_image.Location = new System.Drawing.Point(592, 268);
             this.bt_update_image.Name = "bt_update_image";
-            this.bt_update_image.Size = new System.Drawing.Size(88, 31);
+            this.bt_update_image.Size = new System.Drawing.Size(223, 27);
             this.bt_update_image.TabIndex = 39;
             this.bt_update_image.Text = "Image";
             this.bt_update_image.UseVisualStyleBackColor = true;
             this.bt_update_image.Click += new System.EventHandler(this.bt_update_image_Click);
+            // 
+            // button_AddCourse
+            // 
+            this.button_AddCourse.BackColor = System.Drawing.Color.Green;
+            this.button_AddCourse.Location = new System.Drawing.Point(650, 372);
+            this.button_AddCourse.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.button_AddCourse.Name = "button_AddCourse";
+            this.button_AddCourse.Size = new System.Drawing.Size(154, 42);
+            this.button_AddCourse.TabIndex = 40;
+            this.button_AddCourse.Text = "Add Course";
+            this.button_AddCourse.UseVisualStyleBackColor = false;
+            this.button_AddCourse.Click += new System.EventHandler(this.button_AddCourse_Click);
             // 
             // findStudent
             // 
@@ -288,6 +301,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(850, 490);
+            this.Controls.Add(this.button_AddCourse);
             this.Controls.Add(this.bt_update_image);
             this.Controls.Add(this.bt_find_student);
             this.Controls.Add(this.bt_edit);
@@ -344,5 +358,6 @@
         private System.Windows.Forms.Button bt_Remove;
         private System.Windows.Forms.Button bt_find_student;
         private System.Windows.Forms.Button bt_update_image;
+        private System.Windows.Forms.Button button_AddCourse;
     }
 }

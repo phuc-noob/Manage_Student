@@ -28,6 +28,7 @@ namespace check
         {
             InitializeComponent();
         }
+        Course course = new Course();
         MY_DB db = new MY_DB();
         Student std = new Student();
         public void fillGrid(SqlCommand cmd)
@@ -35,11 +36,38 @@ namespace check
             DataGridViewImageColumn picCol = new DataGridViewImageColumn();
 
             //dataGridView_Print.RowTemplate.MinimumHeight = 500;
-            dataGridView_Print.DataSource = std.getStudent(cmd);
+            DataTable dt = std.getStudent(cmd);
+            // add new column select course
+            dt.Columns.Add("Selected Course", typeof(System.String));
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                string str = "";
+                DataTable stdCour = course.getStuCourseBySId(int.Parse(dt.Rows[i]["id"].ToString()));
+                for (int j = 0; j < stdCour.Rows.Count; j++)
+                {
+                    str += string.Format("{0} ,\n", stdCour.Rows[j]["label"].ToString());
+                }
+                dt.Rows[i]["Selected Course"] = str;
+            }
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                dt.Rows[i]["fname"] = dt.Rows[i]["fname"].ToString().TrimEnd();
+                dt.Rows[i]["lname"] = dt.Rows[i]["lname"].ToString().TrimEnd();
+            }
+            // ----------------------------
+            dataGridView_Print.DataSource = dt;
             picCol = (DataGridViewImageColumn)dataGridView_Print.Columns[7];
             picCol.ImageLayout = DataGridViewImageCellLayout.Stretch;
             dataGridView_Print.AllowUserToAddRows = false;
             dataGridView_Print.Columns[3].DefaultCellStyle.Format = "MM/dd/yyyy";
+            dataGridView_Print.Columns[0].HeaderText = "Student ID";
+            dataGridView_Print.Columns[1].HeaderText = "First Name";
+            dataGridView_Print.Columns[2].HeaderText = "Last Name";
+            dataGridView_Print.Columns[3].HeaderText = "Birth Date";
+            dataGridView_Print.Columns[4].HeaderText = "Gender";
+            dataGridView_Print.Columns[5].HeaderText = "Phone";
+            dataGridView_Print.Columns[6].HeaderText = "Address";
+            dataGridView_Print.Columns[7].HeaderText = "Picture";
         }
 
         private void Print_Load(object sender, EventArgs e)
@@ -51,6 +79,8 @@ namespace check
                 dtPicker_min.Enabled = false;
                 dt_picker_Max.Enabled = false;
             }
+
+
         }
 
         private void bt_check_Print_Click(object sender, EventArgs e)
@@ -144,16 +174,21 @@ namespace check
             {
                 Spire.Doc.Document doc = new Spire.Doc.Document();
 
+               // Spire.Doc.Documents.Paragraph paragraph0 = doc.AddSection().AddParagraph();
                 Spire.Doc.Documents.Paragraph paragraph1 = doc.AddSection().AddParagraph();
-                TextRange text1 = paragraph1.AppendText("DANH SACH SINH VIEN\n");
-                TextRange text2 = paragraph1.AppendText("HK II Nam 2020-2021\n");
+                //paragraph1.Format.HorizontalAlignment = Spire.Doc.Documents.HorizontalAlignment.Left;  // đoạn canh giữa
+                TextRange text0 = paragraph1.AppendText("TRƯỜNG ĐẠI HỌC SƯ PHẠM KỸ THUẬT TP.HỒ CHÍ MINH\n\n");
+                TextRange text1 = paragraph1.AppendText("\t\t\t\t\t DANH SACH SINH VIEN\n");
+                TextRange text2 = paragraph1.AppendText("\t\t\t\t\t     HK II Nam 2020-2021\n");
+                text0.CharacterFormat.FontName = "Times New Roman";
                 text1.CharacterFormat.FontName = "Times New Roman";
                 text2.CharacterFormat.FontName = "Times New Roman";
-                text1.CharacterFormat.FontSize = 24;
+                text1.CharacterFormat.FontSize = 15;
                 text2.CharacterFormat.FontSize = 13;
+                text0.CharacterFormat.FontSize = 10;
                 //paragraph1.Format.TextAlignment = TextAlignment.Center;              // văn bản canh giữa 
-                paragraph1.Format.HorizontalAlignment = Spire.Doc.Documents.HorizontalAlignment.Center;  // đoạn canh giữa
-
+                paragraph1.Format.HorizontalAlignment = Spire.Doc.Documents.HorizontalAlignment.Left;  // đoạn canh giữa
+               // paragraph0.Format.HorizontalAlignment = Spire.Doc.Documents.HorizontalAlignment.Left;
                 Spire.Doc.Table table = doc.Sections[0].AddTable(true);
 
                 // Số dòng và số cột cho bảng
@@ -176,7 +211,7 @@ namespace check
 
                     Spire.Doc.Fields.TextRange tr = p.AppendText(dataGridView_Print.Columns[i].HeaderText);
                     tr.CharacterFormat.FontName = "Times New Roman";
-                    tr.CharacterFormat.FontSize = 13;
+                    tr.CharacterFormat.FontSize = 8;
                     tr.CharacterFormat.Bold = true;
                 }
 
@@ -184,16 +219,27 @@ namespace check
                 {
                     Spire.Doc.TableRow DataRow = table.Rows[i + 1];
                     Spire.Doc.Documents.Paragraph paragraph;
-                    for (int j = 0; j < dataGridView_Print.Columns.Count - 1; j++)
+                    Spire.Doc.Fields.TextRange text;
+                    for (int j = 0; j < dataGridView_Print.Columns.Count - 2; j++)
                     {
-                        DataRow.Height = 100;
+                        DataRow.Height = 50;
                         DataRow.Cells[j].CellFormat.VerticalAlignment = VerticalAlignment.Middle;
                         paragraph = DataRow.Cells[j].AddParagraph();
                         paragraph.Format.HorizontalAlignment = Spire.Doc.Documents.HorizontalAlignment.Center;
-                        Spire.Doc.Fields.TextRange text = paragraph.AppendText(dataGridView_Print.Rows[i].Cells[j].Value.ToString());
+                        text = paragraph.AppendText(dataGridView_Print.Rows[i].Cells[j].Value.ToString());
                         text.CharacterFormat.FontName = "Times New Roman";
-                        text.CharacterFormat.FontSize = 13;
+                        text.CharacterFormat.FontSize = 8;
                     }
+
+                    //-----------------------------------------------------
+                    DataRow.Height = 100;
+                    DataRow.Cells[8].CellFormat.VerticalAlignment = VerticalAlignment.Middle;
+                    paragraph = DataRow.Cells[8].AddParagraph();
+                    paragraph.Format.HorizontalAlignment = Spire.Doc.Documents.HorizontalAlignment.Center;
+                    text = paragraph.AppendText(dataGridView_Print.Rows[i].Cells[8].Value.ToString());
+                    text.CharacterFormat.FontName = "Times New Roman";
+                    text.CharacterFormat.FontSize = 10;
+                    //-----------------------------------------------------
 
                     DataRow.Cells[3].Paragraphs[0].Text = "";
                     DateTime date = (DateTime)dataGridView_Print.Rows[i].Cells[3].Value;
@@ -210,6 +256,11 @@ namespace check
                 doc.SaveToFile(save.FileName);
                 doc.Close();
             }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

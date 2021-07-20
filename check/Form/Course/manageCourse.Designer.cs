@@ -45,20 +45,24 @@
             this.listBox_course = new System.Windows.Forms.ListBox();
             this.label_totalCourse = new System.Windows.Forms.Label();
             this.textBox_id = new System.Windows.Forms.TextBox();
+            this.comboBox_semester = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.comboBox_teacher = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_hour)).BeginInit();
             this.SuspendLayout();
             // 
             // numericUpDown_hour
             // 
             this.numericUpDown_hour.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown_hour.Location = new System.Drawing.Point(243, 168);
+            this.numericUpDown_hour.Location = new System.Drawing.Point(182, 165);
             this.numericUpDown_hour.Minimum = new decimal(new int[] {
             10,
             0,
             0,
             0});
             this.numericUpDown_hour.Name = "numericUpDown_hour";
-            this.numericUpDown_hour.Size = new System.Drawing.Size(120, 27);
+            this.numericUpDown_hour.Size = new System.Drawing.Size(76, 27);
             this.numericUpDown_hour.TabIndex = 27;
             this.numericUpDown_hour.Value = new decimal(new int[] {
             10,
@@ -81,18 +85,18 @@
             // 
             // tb_des
             // 
-            this.tb_des.Location = new System.Drawing.Point(243, 222);
+            this.tb_des.Location = new System.Drawing.Point(182, 222);
             this.tb_des.Multiline = true;
             this.tb_des.Name = "tb_des";
-            this.tb_des.Size = new System.Drawing.Size(248, 106);
+            this.tb_des.Size = new System.Drawing.Size(373, 106);
             this.tb_des.TabIndex = 25;
             // 
             // tb_Name
             // 
-            this.tb_Name.Location = new System.Drawing.Point(243, 98);
+            this.tb_Name.Location = new System.Drawing.Point(182, 98);
             this.tb_Name.Multiline = true;
             this.tb_Name.Name = "tb_Name";
-            this.tb_Name.Size = new System.Drawing.Size(248, 29);
+            this.tb_Name.Size = new System.Drawing.Size(373, 29);
             this.tb_Name.TabIndex = 24;
             // 
             // label4
@@ -100,7 +104,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label4.Location = new System.Drawing.Point(63, 222);
+            this.label4.Location = new System.Drawing.Point(21, 222);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(146, 29);
             this.label4.TabIndex = 23;
@@ -111,7 +115,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label3.Location = new System.Drawing.Point(118, 160);
+            this.label3.Location = new System.Drawing.Point(76, 160);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(91, 29);
             this.label3.TabIndex = 22;
@@ -122,7 +126,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(131, 98);
+            this.label2.Location = new System.Drawing.Point(89, 98);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 29);
             this.label2.TabIndex = 21;
@@ -133,7 +137,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(162, 35);
+            this.label1.Location = new System.Drawing.Point(120, 35);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(38, 29);
             this.label1.TabIndex = 20;
@@ -220,18 +224,19 @@
             // listBox_course
             // 
             this.listBox_course.ItemHeight = 16;
-            this.listBox_course.Location = new System.Drawing.Point(559, 35);
+            this.listBox_course.Location = new System.Drawing.Point(578, 35);
             this.listBox_course.Name = "listBox_course";
             this.listBox_course.Size = new System.Drawing.Size(368, 356);
             this.listBox_course.TabIndex = 37;
             this.listBox_course.Click += new System.EventHandler(this.listBox_course_Click);
+            this.listBox_course.DoubleClick += new System.EventHandler(this.listBox_course_DoubleClick);
             // 
             // label_totalCourse
             // 
             this.label_totalCourse.BackColor = System.Drawing.Color.DarkGoldenrod;
             this.label_totalCourse.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_totalCourse.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label_totalCourse.Location = new System.Drawing.Point(713, 423);
+            this.label_totalCourse.Location = new System.Drawing.Point(732, 423);
             this.label_totalCourse.Name = "label_totalCourse";
             this.label_totalCourse.Size = new System.Drawing.Size(214, 32);
             this.label_totalCourse.TabIndex = 38;
@@ -240,18 +245,61 @@
             // 
             // textBox_id
             // 
-            this.textBox_id.Location = new System.Drawing.Point(243, 35);
+            this.textBox_id.Location = new System.Drawing.Point(182, 35);
             this.textBox_id.Multiline = true;
             this.textBox_id.Name = "textBox_id";
             this.textBox_id.Size = new System.Drawing.Size(120, 29);
             this.textBox_id.TabIndex = 39;
+            // 
+            // comboBox_semester
+            // 
+            this.comboBox_semester.FormattingEnabled = true;
+            this.comboBox_semester.Location = new System.Drawing.Point(452, 38);
+            this.comboBox_semester.Name = "comboBox_semester";
+            this.comboBox_semester.Size = new System.Drawing.Size(103, 24);
+            this.comboBox_semester.TabIndex = 41;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label5.Location = new System.Drawing.Point(314, 35);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(125, 29);
+            this.label5.TabIndex = 40;
+            this.label5.Text = "Semester";
+            // 
+            // comboBox_teacher
+            // 
+            this.comboBox_teacher.FormattingEnabled = true;
+            this.comboBox_teacher.Location = new System.Drawing.Point(382, 165);
+            this.comboBox_teacher.Name = "comboBox_teacher";
+            this.comboBox_teacher.Size = new System.Drawing.Size(173, 24);
+            this.comboBox_teacher.TabIndex = 43;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label6.Location = new System.Drawing.Point(280, 163);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(96, 29);
+            this.label6.TabIndex = 42;
+            this.label6.Text = "Techer";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // manageCourse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.ClientSize = new System.Drawing.Size(954, 494);
+            this.ClientSize = new System.Drawing.Size(978, 494);
+            this.Controls.Add(this.comboBox_teacher);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.comboBox_semester);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.textBox_id);
             this.Controls.Add(this.label_totalCourse);
             this.Controls.Add(this.listBox_course);
@@ -296,5 +344,9 @@
         private System.Windows.Forms.ListBox listBox_course;
         private System.Windows.Forms.Label label_totalCourse;
         private System.Windows.Forms.TextBox textBox_id;
+        private System.Windows.Forms.ComboBox comboBox_semester;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox comboBox_teacher;
+        private System.Windows.Forms.Label label6;
     }
 }

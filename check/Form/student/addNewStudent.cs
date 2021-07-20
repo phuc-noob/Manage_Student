@@ -87,5 +87,10 @@ namespace check
         {
             this.Close();
         }
+
+        private void infoStudent_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
